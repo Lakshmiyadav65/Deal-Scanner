@@ -44,27 +44,27 @@ export default function Home() {
           }
         />
 
-        <section className="wrap" style={{ position: "relative", padding: "78px 28px 0", textAlign: "center" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 9, background: "rgba(255,255,255,.75)", border: "1px solid #E6E7EE", borderRadius: 999, padding: "7px 16px", fontSize: 13, color: "#4A4A55" }}>
-            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#3FA663", display: "inline-block" }} />
+        <section className="wrap section-pad" style={{ position: "relative", padding: "78px 28px 0", textAlign: "center" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 9, background: "rgba(255,255,255,.75)", border: "1px solid #E6E7EE", borderRadius: 999, padding: "7px 16px", fontSize: 13, color: "#4A4A55", maxWidth: "100%" }}>
+            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#3FA663", display: "inline-block", flexShrink: 0 }} />
             16 kitchens tracked around North Texas
           </div>
           <h1 style={{ margin: "22px 0 0", fontSize: 86, lineHeight: 0.98, letterSpacing: "-0.045em", fontWeight: 700, textWrap: "balance" }}>
             Something good is coming
-            <span style={{ display: "inline-flex", alignItems: "center", verticalAlign: "middle", margin: "0 6px" }}>
-              {["https://loremflickr.com/300/300/biryani?lock=11", "https://loremflickr.com/300/300/dosa?lock=12", "https://loremflickr.com/300/300/chai,tea?lock=13"].map((src, i) => (
-                <span key={src} style={{ width: 58, height: 58, borderRadius: 999, overflow: "hidden", border: "3px solid #FFFFFF", display: "inline-block", marginLeft: i ? -16 : 0 }}>
+            <span className="hero-avatars">
+              {["https://loremflickr.com/300/300/biryani?lock=11", "https://loremflickr.com/300/300/dosa?lock=12", "https://loremflickr.com/300/300/chai,tea?lock=13"].map((src) => (
+                <span key={src} className="hero-avatar">
                   <ImageSlot src={src} alt="" shape="circle" />
                 </span>
               ))}
             </span>
             to your <span className="italic" style={{ letterSpacing: "-0.01em" }}> neighborhood.</span>
           </h1>
-          <p style={{ margin: "24px auto 0", maxWidth: "60ch", fontSize: 17, lineHeight: 1.6, color: "#55555F" }}>
+          <p style={{ margin: "24px auto 0", maxWidth: "60ch", fontSize: 17, lineHeight: 1.6, color: "#55555F", padding: "0 4px" }}>
             Discover upcoming restaurants, local favorites and offers worth stepping out for.
           </p>
-          <div style={{ marginTop: 30, display: "flex", justifyContent: "center", alignItems: "center", gap: 18, flexWrap: "wrap" }}>
-            <Link to="/explore" className="btn-dark pill" style={{ background: "#131316", color: "#FFFFFF", borderRadius: 999, padding: "17px 34px", fontSize: 15, fontWeight: 600 }}>
+          <div className="mobile-stack" style={{ marginTop: 30, display: "flex", justifyContent: "center", alignItems: "center", gap: 18, flexWrap: "wrap" }}>
+            <Link to="/explore" className="btn-dark pill mobile-full" style={{ background: "#131316", color: "#FFFFFF", borderRadius: 999, padding: "17px 34px", fontSize: 15, fontWeight: 600 }}>
               Explore restaurants
             </Link>
             <a href="#upcoming" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 15, fontWeight: 600, color: "#131316" }}>
@@ -72,17 +72,17 @@ export default function Home() {
             </a>
           </div>
 
-          <div style={{ marginTop: 52, background: "#FFFFFF", border: "1px solid #ECEDF2", borderRadius: 30, padding: 28, boxShadow: "0 40px 80px -50px rgba(20,20,40,.45)", textAlign: "left" }}>
+          <div className="search-panel">
             <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 16 }}>What are you hungry for?</div>
             <div className="grid-search" style={{ display: "grid", gridTemplateColumns: "1.7fr 1fr 1fr auto", gap: 12, alignItems: "center" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, background: "#F5F6F9", borderRadius: 999, padding: "0 20px", height: 58 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, background: "#F5F6F9", borderRadius: 999, padding: "0 20px", height: 58, minWidth: 0 }}>
                 <span style={{ color: "#8F909C", fontSize: 15 }}>⌕</span>
                 <input
                   placeholder="Search restaurants, cuisines or dishes"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && goExplore()}
-                  style={{ flex: 1, border: "none", outline: "none", background: "none", fontSize: 15, color: "#111112", height: 56 }}
+                  style={{ flex: 1, border: "none", outline: "none", background: "none", fontSize: 15, color: "#111112", height: 56, minWidth: 0, width: "100%" }}
                 />
               </div>
               <button type="button" onClick={() => setPicker((p) => (p === "loc" ? null : "loc"))} style={pickerBtn}>
@@ -91,7 +91,7 @@ export default function Home() {
               <button type="button" onClick={() => setPicker((p) => (p === "status" ? null : "status"))} style={pickerBtn}>
                 {status}<span style={{ fontSize: 10, color: "#8F909C" }}>▼</span>
               </button>
-              <button type="button" onClick={() => goExplore()} className="btn-dark pill" style={{ background: "#131316", color: "#FFFFFF", border: "none", borderRadius: 999, height: 58, padding: "0 34px", fontSize: 15, fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap" }}>
+              <button type="button" onClick={() => goExplore()} className="btn-dark pill" style={{ background: "#131316", color: "#FFFFFF", border: "none", borderRadius: 999, height: 58, padding: "0 34px", fontSize: 15, fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap", width: "100%" }}>
                 Find restaurants
               </button>
             </div>
@@ -125,7 +125,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="wrap" style={{ position: "relative", padding: "44px 28px 64px" }}>
+        <div className="wrap section-pad" style={{ position: "relative", padding: "44px 28px 64px" }}>
           <div style={{ textAlign: "center", fontSize: 13, color: "#8F909C", marginBottom: 22 }}>Loved by neighborhood kitchens across North Texas</div>
           <div style={{ overflow: "hidden", maskImage: "linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)" }}>
             <div className="ds-ticker">
@@ -139,16 +139,16 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="wrap" style={{ padding: "76px 28px 0" }}>
+      <section className="wrap section-pad" style={{ padding: "76px 28px 0" }}>
         <div className="grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", textAlign: "center" }}>
           {[
             ["16", "Restaurants listed"],
             ["5", "Partner kitchens"],
             ["5", "Offers listed"],
           ].map(([n, label], i) => (
-            <div key={label} style={{ padding: "0 20px", borderLeft: i === 1 ? "1px solid #ECEDF2" : undefined, borderRight: i === 1 ? "1px solid #ECEDF2" : undefined }}>
-              <div style={{ fontSize: 74, lineHeight: 1, letterSpacing: "-0.05em", fontWeight: 700 }}>
-                {n}<span style={{ fontSize: 30, verticalAlign: "top", color: "#E2761B" }}>+</span>
+            <div key={label} style={{ padding: "0 12px", borderLeft: i === 1 ? "1px solid #ECEDF2" : undefined, borderRight: i === 1 ? "1px solid #ECEDF2" : undefined }}>
+              <div className="stat-value">
+                {n}<span style={{ fontSize: "0.4em", verticalAlign: "top", color: "#E2761B" }}>+</span>
               </div>
               <div style={{ fontSize: 14, color: "#77778A", marginTop: 10 }}>{label}</div>
             </div>
@@ -156,7 +156,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="upcoming" className="wrap" style={{ padding: "96px 28px 0" }}>
+      <section id="upcoming" className="wrap section-pad" style={{ padding: "96px 28px 0" }}>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 28, flexWrap: "wrap" }}>
           <div>
             <h2 style={{ margin: 0, fontSize: 52, lineHeight: 1.04, letterSpacing: "-0.04em", fontWeight: 700, maxWidth: "18ch" }}>
@@ -185,7 +185,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="partnered" className="wrap" style={{ padding: "110px 28px 0" }}>
+      <section id="partnered" className="wrap section-pad" style={{ padding: "110px 28px 0" }}>
         <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto" }}>
           <h2 style={{ margin: 0, fontSize: 48, lineHeight: 1.06, letterSpacing: "-0.04em", fontWeight: 700 }}>
             Upcoming partnered or <span className="italic">collaborated</span> restaurants
@@ -220,7 +220,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="offers" className="wrap" style={{ padding: "110px 28px 0" }}>
+      <section id="offers" className="wrap section-pad" style={{ padding: "110px 28px 0" }}>
         <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto" }}>
           <h2 style={{ margin: 0, fontSize: 52, lineHeight: 1.04, letterSpacing: "-0.04em", fontWeight: 700 }}>
             Good food. <span className="italic" style={{ color: "#E2761B" }}>Better reasons to go.</span>
@@ -280,7 +280,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="how" className="wrap" style={{ padding: "110px 28px 0", textAlign: "center" }}>
+      <section id="how" className="wrap section-pad" style={{ padding: "110px 28px 0", textAlign: "center" }}>
         <h2 style={{ margin: 0, fontSize: 48, lineHeight: 1.06, letterSpacing: "-0.04em", fontWeight: 700 }}>
           Where discovery <span className="italic">meets dinner</span>
         </h2>
@@ -302,15 +302,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="wrap" style={{ padding: "110px 28px 96px" }}>
-        <div className="grid-split" style={{ background: "#131316", borderRadius: 34, padding: 56, display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 40, alignItems: "center", color: "#FFFFFF" }}>
+      <section className="wrap section-pad" style={{ padding: "110px 28px 96px" }}>
+        <div className="grid-split panel-dark" style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 40, alignItems: "center" }}>
           <div>
             <h2 style={{ margin: 0, fontSize: 52, lineHeight: 1.02, letterSpacing: "-0.04em", fontWeight: 700, color: "#FFFFFF" }}>
               Your next favorite restaurant might be <span className="italic" style={{ color: "#F5A04A" }}>closer than you think.</span>
             </h2>
-            <div style={{ marginTop: 32, display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link to="/explore" className="btn-start pill" style={{ background: "#FFFFFF", color: "#111112", borderRadius: 999, padding: "16px 30px", fontSize: 15, fontWeight: 600 }}>Explore restaurants</Link>
-              <a href="#upcoming" className="btn-ghost pill keep-white" style={{ border: "1px solid #3A3A44", color: "#FFFFFF", borderRadius: 999, padding: "16px 30px", fontSize: 15, fontWeight: 600 }}>See upcoming openings</a>
+            <div className="mobile-stack" style={{ marginTop: 32, display: "flex", gap: 14, flexWrap: "wrap" }}>
+              <Link to="/explore" className="btn-start pill mobile-full" style={{ background: "#FFFFFF", color: "#111112", borderRadius: 999, padding: "16px 30px", fontSize: 15, fontWeight: 600 }}>Explore restaurants</Link>
+              <a href="#upcoming" className="btn-ghost pill keep-white mobile-full" style={{ border: "1px solid #3A3A44", color: "#FFFFFF", borderRadius: 999, padding: "16px 30px", fontSize: 15, fontWeight: 600 }}>See upcoming openings</a>
             </div>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
@@ -398,7 +398,7 @@ function UpcomingCard({ restaurant, tint = "#FFFFFF", border = "#ECEDF2", badgeB
 function PartnerRow({ slug, note, offer }) {
   const restaurant = getRestaurant(slug);
   return (
-    <Link to={`/restaurant/${slug}`} className="partner-row" style={{ display: "grid", gridTemplateColumns: "112px 1fr auto", gap: 18, alignItems: "center", background: "#FFFFFF", border: "1px solid #ECEDF2", borderRadius: 24, padding: 14, color: "#111112" }}>
+    <Link to={`/restaurant/${slug}`} className="partner-row">
       <div style={{ height: 104, borderRadius: 16, overflow: "hidden", background: "#F0F1F5" }}>
         <ImageSlot src={restaurant.images.partner} alt={restaurant.name} />
       </div>

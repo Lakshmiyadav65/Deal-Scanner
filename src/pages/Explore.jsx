@@ -90,7 +90,7 @@ export default function Explore() {
           }
         />
 
-        <section className="wrap" style={{ position: "relative", padding: "64px 28px 56px", textAlign: "center" }}>
+        <section className="wrap section-pad" style={{ position: "relative", padding: "64px 28px 56px", textAlign: "center" }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 9, background: "rgba(255,255,255,.75)", border: "1px solid #E6E7EE", borderRadius: 999, padding: "7px 16px", fontSize: 13, color: "#4A4A55" }}>
             <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#E2761B", display: "inline-block" }} />
             Browsing {location}
@@ -98,14 +98,13 @@ export default function Explore() {
           <h1 style={{ margin: "20px 0 0", fontSize: 72, lineHeight: 1, letterSpacing: "-0.045em", fontWeight: 700 }}>
             Restaurants worth <span className="italic">knowing about.</span>
           </h1>
-          <div style={{ margin: "34px auto 0", maxWidth: 860, background: "#FFFFFF", border: "1px solid #ECEDF2", borderRadius: 999, padding: "9px 9px 9px 22px", display: "flex", alignItems: "center", gap: 12, boxShadow: "0 30px 60px -46px rgba(20,20,40,.5)" }}>
+          <div className="search-bar">
             <span style={{ color: "#8F909C", fontSize: 15 }}>⌕</span>
             <input
               placeholder="Search restaurants, cuisines or dishes"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && runSearch()}
-              style={{ flex: 1, border: "none", outline: "none", background: "none", fontSize: 15, color: "#111112", height: 48 }}
             />
             <button type="button" className="chip" onClick={cycleCity} style={{ background: "#F5F6F9", border: "none", borderRadius: 999, height: 48, padding: "0 20px", fontSize: 14, color: "#111112", cursor: "pointer", whiteSpace: "nowrap" }}>
               {location} ⇄
@@ -117,20 +116,20 @@ export default function Explore() {
         </section>
       </div>
 
-      <div style={{ position: "sticky", top: 0, zIndex: 30, background: "rgba(255,255,255,.92)", backdropFilter: "blur(10px)", borderBottom: "1px solid #ECEDF2" }}>
+      <div className="filter-bar">
         <div className="ds-rail pad-x" style={{ maxWidth: 1180, margin: "0 auto", padding: "14px 28px", display: "flex", gap: 9, overflowX: "auto", alignItems: "center" }}>
           {labels.map((label) => (
             <button key={label} type="button" onClick={() => applyFilter(label)} style={chip(filter === label)}>
               {label}
             </button>
           ))}
-          <span style={{ marginLeft: "auto", paddingLeft: 16, fontSize: 13, color: "#8F909C", whiteSpace: "nowrap" }}>
+          <span className="filter-count">
             {visible.length} listings · {filter}
           </span>
         </div>
       </div>
 
-      <section id="feed" className="wrap" style={{ padding: "40px 28px 0" }}>
+      <section id="feed" className="wrap section-pad" style={{ padding: "40px 28px 0" }}>
         {visible.length === 0 && (
           <div style={{ background: "#FAFAFD", border: "1px solid #ECEDF2", borderRadius: 28, padding: 40, textAlign: "center", marginBottom: 24 }}>
             <div style={{ fontSize: 22, fontWeight: 700 }}>No listings match that search.</div>
@@ -174,15 +173,15 @@ export default function Explore() {
         </div>
       </section>
 
-      <section className="wrap" style={{ padding: "80px 28px 96px" }}>
-        <div style={{ background: "#131316", borderRadius: 34, padding: 48, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 32, flexWrap: "wrap", color: "#FFFFFF" }}>
+      <section className="wrap section-pad" style={{ padding: "80px 28px 96px" }}>
+        <div className="panel-dark-sm mobile-stack" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 32, flexWrap: "wrap" }}>
           <div>
             <div style={{ fontSize: 13, color: "#B9B9C6" }}>Data from Indian Restaurants in USA</div>
             <div style={{ fontSize: 38, fontWeight: 700, letterSpacing: "-0.04em", marginTop: 8, color: "#FFFFFF" }}>
               Real kitchens around <span className="italic" style={{ color: "#F5A04A" }}>North Texas.</span>
             </div>
           </div>
-          <a href="https://www.indianrestaurentsinusa.com/usa/texas/fort-worth/indian-restaurants" target="_blank" rel="noreferrer" className="btn-start pill keep-white" style={{ background: "#FFFFFF", color: "#111112", borderRadius: 999, padding: "16px 30px", fontSize: 15, fontWeight: 600 }}>
+          <a href="https://www.indianrestaurentsinusa.com/usa/texas/fort-worth/indian-restaurants" target="_blank" rel="noreferrer" className="btn-start pill keep-white mobile-full" style={{ background: "#FFFFFF", color: "#111112", borderRadius: 999, padding: "16px 30px", fontSize: 15, fontWeight: 600 }}>
             Source directory →
           </a>
         </div>
@@ -197,14 +196,14 @@ function FeaturedCard({ restaurant }) {
   const [saved, toggleSave] = useSaved(restaurant.slug);
   return (
     <article className="grid-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 32, alignItems: "center", background: "#FAFAFD", border: "1px solid #ECEDF2", borderRadius: 32, padding: 16 }}>
-      <Link to={`/restaurant/${restaurant.slug}`} style={{ display: "block", position: "relative", height: 430, borderRadius: 24, overflow: "hidden", background: "#F0F1F5" }}>
+      <Link to={`/restaurant/${restaurant.slug}`} className="media-feature" style={{ display: "block" }}>
         <ImageSlot src={restaurant.images.hero} alt={restaurant.name} />
         <div style={{ position: "absolute", top: 16, left: 16, display: "flex", gap: 8, pointerEvents: "none", flexWrap: "wrap" }}>
           {restaurant.partnered && <span style={{ background: "#131316", color: "#FFFFFF", borderRadius: 999, padding: "8px 15px", fontSize: 12, fontWeight: 600 }}>Partnered</span>}
           <span style={{ background: "rgba(255,255,255,.94)", borderRadius: 999, padding: "8px 15px", fontSize: 12, fontWeight: 600 }}>{restaurant.rating} ★ · {restaurant.reviewCount} reviews</span>
         </div>
       </Link>
-      <div style={{ padding: "12px 20px 12px 4px" }}>
+      <div style={{ padding: "12px 8px" }}>
         <div style={{ fontSize: 13, fontWeight: 600, color: "#E2761B" }}>Featured · {restaurant.cityName}</div>
         <h2 style={{ margin: "10px 0 0", fontSize: 44, lineHeight: 1.02, letterSpacing: "-0.04em", fontWeight: 700 }}>{restaurant.name}</h2>
         <div style={{ fontSize: 14, color: "#77778A", marginTop: 8 }}>{restaurant.cuisine} · {restaurant.city}</div>
@@ -219,14 +218,14 @@ function FeaturedCard({ restaurant }) {
             <span style={{ fontSize: 12, color: "#8A6A46", textAlign: "right" }}>{restaurant.offer.note}</span>
           </div>
         )}
-        <div style={{ marginTop: 22, display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-          <Link to={`/restaurant/${restaurant.slug}`} className="btn-dark pill" style={{ background: "#131316", color: "#FFFFFF", borderRadius: 999, padding: "15px 26px", fontSize: 14, fontWeight: 600 }}>
+        <div className="mobile-stack" style={{ marginTop: 22, display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
+          <Link to={`/restaurant/${restaurant.slug}`} className="btn-dark pill mobile-full" style={{ background: "#131316", color: "#FFFFFF", borderRadius: 999, padding: "15px 26px", fontSize: 14, fontWeight: 600 }}>
             View restaurant
           </Link>
-          <a href={restaurant.directionsUrl} target="_blank" rel="noreferrer" className="btn-outline pill" style={{ border: "1px solid #E6E7EE", background: "#FFFFFF", borderRadius: 999, padding: "15px 26px", fontSize: 14, fontWeight: 600, color: "#111112" }}>
+          <a href={restaurant.directionsUrl} target="_blank" rel="noreferrer" className="btn-outline pill mobile-full" style={{ border: "1px solid #E6E7EE", background: "#FFFFFF", borderRadius: 999, padding: "15px 26px", fontSize: 14, fontWeight: 600, color: "#111112" }}>
             Get directions
           </a>
-          <button type="button" onClick={toggleSave} style={{
+          <button type="button" onClick={toggleSave} className="mobile-full" style={{
             background: saved ? "#EAF6EE" : "#FFFFFF",
             border: `1px solid ${saved ? "#CDE6D8" : "#E6E7EE"}`,
             color: saved ? "#2F7A4C" : "#111112",

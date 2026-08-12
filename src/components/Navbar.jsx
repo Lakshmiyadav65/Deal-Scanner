@@ -6,8 +6,12 @@ export default function Navbar({ variant = "home", cta }) {
   return (
     <div className="nav-wrap" data-pad="true">
       <header className="ds-header" data-nav="true">
-        <Link to="/" className="logo" style={{ display: "flex", alignItems: "center", gap: 10, fontWeight: 700, fontSize: 17, letterSpacing: "-0.02em" }}>
-          <span style={{ width: 22, height: 22, borderRadius: 7, background: "linear-gradient(135deg,#F5A04A,#E2761B)", display: "inline-block" }} />
+        <Link
+          to="/"
+          className="logo"
+          style={{ display: "flex", alignItems: "center", gap: 10, fontWeight: 700, fontSize: 17, letterSpacing: "-0.02em" }}
+        >
+          <span style={{ width: 22, height: 22, borderRadius: 7, background: "linear-gradient(135deg,#F5A04A,#E2761B)", display: "inline-block", flexShrink: 0 }} />
           Deal Scanner
         </Link>
         <nav>
@@ -28,7 +32,7 @@ export default function Navbar({ variant = "home", cta }) {
             </>
           )}
         </nav>
-        {cta}
+        {cta ? <div className="nav-cta">{cta}</div> : null}
       </header>
     </div>
   );

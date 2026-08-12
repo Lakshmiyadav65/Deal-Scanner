@@ -59,21 +59,21 @@ export default function Restaurant() {
           }
         />
 
-        <section className="wrap" style={{ position: "relative", padding: "26px 28px 0" }}>
-          <div style={{ fontSize: 13, color: "#8F909C" }}>
+        <section className="wrap section-pad" style={{ position: "relative", padding: "26px 28px 0" }}>
+          <div style={{ fontSize: 13, color: "#8F909C", overflowWrap: "anywhere" }}>
             <Link to="/" className="muted-link">Home</Link> / <Link to="/explore" className="muted-link">Explore</Link> / <span style={{ color: "#111112" }}>{restaurant.name}</span>
           </div>
           <div className="grid-split" style={{ marginTop: 22, display: "grid", gridTemplateColumns: "1.15fr 0.85fr", gap: 28, alignItems: "stretch" }}>
-            <div style={{ position: "relative", height: 520, borderRadius: 32, overflow: "hidden", background: "#F0F1F5" }}>
+            <div className="media-hero">
               <ImageSlot src={restaurant.images.hero} alt={restaurant.name} />
-              <div style={{ position: "absolute", top: 20, left: 20, display: "flex", gap: 8, pointerEvents: "none", flexWrap: "wrap" }}>
+              <div style={{ position: "absolute", top: 16, left: 16, display: "flex", gap: 8, pointerEvents: "none", flexWrap: "wrap" }}>
                 {coming && <span style={{ background: "rgba(255,255,255,.94)", borderRadius: 999, padding: "9px 16px", fontSize: 12, fontWeight: 600 }}>Coming soon</span>}
                 {restaurant.partnered && <span style={{ background: "#131316", color: "#FFFFFF", borderRadius: 999, padding: "9px 16px", fontSize: 12, fontWeight: 600 }}>Partnered</span>}
                 {restaurant.rating && <span style={{ background: "rgba(255,255,255,.94)", borderRadius: 999, padding: "9px 16px", fontSize: 12, fontWeight: 600 }}>{restaurant.rating} ★ · {restaurant.reviewCount}</span>}
               </div>
             </div>
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: coming ? "#FFF1E3" : "#EAF6EE", color: coming ? "#B45C0E" : "#2F7A4C", borderRadius: 999, padding: "8px 15px", fontSize: 12, fontWeight: 600, width: "max-content" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: coming ? "#FFF1E3" : "#EAF6EE", color: coming ? "#B45C0E" : "#2F7A4C", borderRadius: 999, padding: "8px 15px", fontSize: 12, fontWeight: 600, width: "max-content", maxWidth: "100%" }}>
                 {coming ? "Opening soon · date coming soon" : `Open · ${restaurant.hours?.[0]?.value || "See hours below"}`}
               </div>
               <h1 style={{ margin: "16px 0 0", fontSize: 64, lineHeight: 0.98, letterSpacing: "-0.045em", fontWeight: 700 }}>
@@ -82,8 +82,8 @@ export default function Restaurant() {
               <div style={{ fontSize: 15, color: "#77778A", marginTop: 12 }}>{restaurant.cuisine} · {restaurant.city}</div>
               <p style={{ margin: "16px 0 0", fontSize: 16, lineHeight: 1.65, color: "#55555F", maxWidth: "42ch" }}>{restaurant.description}</p>
               <div style={{ marginTop: 10, fontSize: 14, color: "#8F909C" }}>{restaurant.address}</div>
-              <div style={{ marginTop: 26, display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <button type="button" onClick={toggleSave} style={{
+              <div className="mobile-stack" style={{ marginTop: 26, display: "flex", gap: 12, flexWrap: "wrap" }}>
+                <button type="button" onClick={toggleSave} className="mobile-full" style={{
                   background: saved ? "#EAF6EE" : "#131316",
                   color: saved ? "#2F7A4C" : "#FFFFFF",
                   border: `1px solid ${saved ? "#CDE6D8" : "#131316"}`,
@@ -91,18 +91,18 @@ export default function Restaurant() {
                 }}>
                   {saved ? "✓ Saved" : "Save restaurant"}
                 </button>
-                <a href={restaurant.directionsUrl} target="_blank" rel="noreferrer" className="btn-outline pill" style={{ border: "1px solid #E6E7EE", background: "#FFFFFF", borderRadius: 999, padding: "15px 26px", fontSize: 14, fontWeight: 600, color: "#111112" }}>
+                <a href={restaurant.directionsUrl} target="_blank" rel="noreferrer" className="btn-outline pill mobile-full" style={{ border: "1px solid #E6E7EE", background: "#FFFFFF", borderRadius: 999, padding: "15px 26px", fontSize: 14, fontWeight: 600, color: "#111112" }}>
                   Get directions
                 </a>
                 {restaurant.phone && (
-                  <a href={`tel:${restaurant.phone}`} className="btn-outline pill" style={{ border: "1px solid #E6E7EE", background: "#FFFFFF", borderRadius: 999, padding: "15px 26px", fontSize: 14, fontWeight: 600, color: "#111112" }}>
+                  <a href={`tel:${restaurant.phone}`} className="btn-outline pill mobile-full" style={{ border: "1px solid #E6E7EE", background: "#FFFFFF", borderRadius: 999, padding: "15px 26px", fontSize: 14, fontWeight: 600, color: "#111112" }}>
                     Call
                   </a>
                 )}
               </div>
               <div className="grid-3" style={{ marginTop: 24, display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 12, height: 92 }}>
-                {restaurant.images.thumbs.map((src) => (
-                  <div key={src} style={{ borderRadius: 18, overflow: "hidden", background: "#F0F1F5" }}>
+                {restaurant.images.thumbs.map((src, i) => (
+                  <div key={`${src}-${i}`} style={{ borderRadius: 18, overflow: "hidden", background: "#F0F1F5", height: "100%" }}>
                     <ImageSlot src={src} alt="" />
                   </div>
                 ))}
@@ -111,8 +111,8 @@ export default function Restaurant() {
           </div>
         </section>
 
-        <section className="wrap" style={{ position: "relative", padding: "36px 28px 56px" }}>
-          <div className="grid-facts" style={{ background: "#FFFFFF", border: "1px solid #ECEDF2", borderRadius: 28, padding: 8, display: "grid", gridTemplateColumns: "repeat(5,1fr)", boxShadow: "0 30px 60px -50px rgba(20,20,40,.5)" }}>
+        <section className="wrap section-pad" style={{ position: "relative", padding: "36px 28px 56px" }}>
+          <div className="grid-facts ds-rail" style={{ background: "#FFFFFF", border: "1px solid #ECEDF2", borderRadius: 28, padding: 8, display: "grid", gridTemplateColumns: "repeat(5,1fr)", boxShadow: "0 30px 60px -50px rgba(20,20,40,.5)", overflowX: "auto" }}>
             {[
               ["Location", restaurant.city],
               ["Cuisine", restaurant.cuisineFull],
@@ -134,16 +134,16 @@ export default function Restaurant() {
       </div>
 
       {restaurant.offer && (
-        <section className="wrap" style={{ padding: "24px 28px 0" }}>
+        <section className="wrap section-pad" style={{ padding: "24px 28px 0" }}>
           <div className="grid-split" data-offer="true" style={{ background: "#131316", borderRadius: 34, padding: 0, display: "grid", gridTemplateColumns: "1.1fr 0.9fr", overflow: "hidden", color: "#FFFFFF" }}>
-            <div style={{ padding: "52px 48px" }}>
+            <div className="offer-copy">
               <div style={{ display: "inline-flex", background: "rgba(245,160,74,.18)", color: "#F5A04A", borderRadius: 999, padding: "8px 16px", fontSize: 12, fontWeight: 600 }}>{restaurant.offer.badge}</div>
-              <div style={{ fontSize: 66, lineHeight: 1, letterSpacing: "-0.045em", fontWeight: 700, marginTop: 22, color: "#FFFFFF" }}>
+              <div className="offer-title">
                 {restaurant.offer.headline} <span className="italic" style={{ color: "#F5A04A" }}>{restaurant.offer.italic}</span>
               </div>
               <p style={{ margin: "20px 0 0", fontSize: 16, lineHeight: 1.65, color: "#B9B9C6", maxWidth: "44ch" }}>{restaurant.offer.detail}</p>
-              <div style={{ marginTop: 30, display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
-                <button type="button" onClick={() => setOfferSaved((v) => !v)} style={{
+              <div className="mobile-stack" style={{ marginTop: 30, display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
+                <button type="button" onClick={() => setOfferSaved((v) => !v)} className="mobile-full" style={{
                   background: offerSaved ? "transparent" : "#F5A04A",
                   color: offerSaved ? "#F5A04A" : "#2A1B06",
                   border: "1px solid #F5A04A",
@@ -154,14 +154,14 @@ export default function Restaurant() {
                 <span style={{ fontSize: 13, color: "#8F909C" }}>{offerSaved ? "We'll notify you at launch" : "Terms coming soon"}</span>
               </div>
             </div>
-            <div style={{ position: "relative", minHeight: 340 }}>
+            <div style={{ position: "relative", minHeight: 280 }}>
               <ImageSlot src={restaurant.images.offer} alt="Offer dish" />
             </div>
           </div>
         </section>
       )}
 
-      <section id="menu" className="wrap" style={{ padding: "96px 28px 0" }}>
+      <section id="menu" className="wrap section-pad" style={{ padding: "96px 28px 0" }}>
         <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto" }}>
           <h2 style={{ margin: 0, fontSize: 48, lineHeight: 1.04, letterSpacing: "-0.04em", fontWeight: 700 }}>
             What's on the <span className="italic">menu</span>
@@ -205,14 +205,14 @@ export default function Restaurant() {
         </div>
       </section>
 
-      <section className="wrap" style={{ padding: "100px 28px 0" }}>
+      <section className="wrap section-pad" style={{ padding: "100px 28px 0" }}>
         <div className="grid-split" style={{ background: "#F6F7FB", borderRadius: 34, padding: 20, display: "grid", gridTemplateColumns: "0.9fr 1.1fr", gap: 36, alignItems: "center" }}>
-          <div style={{ height: 360, borderRadius: 26, overflow: "hidden", background: "#F0F1F5" }}>
+          <div style={{ height: 360, maxHeight: "50vw", minHeight: 220, borderRadius: 26, overflow: "hidden", background: "#F0F1F5" }}>
             <ImageSlot src={restaurant.images.about} alt="Kitchen" />
           </div>
-          <div style={{ padding: "20px 28px 20px 0" }}>
+          <div style={{ padding: "12px 8px" }}>
             <div style={{ fontSize: 13, fontWeight: 600, color: "#8F909C" }}>About the restaurant</div>
-            <p style={{ margin: "16px 0 0", fontFamily: "'Instrument Serif', serif", fontSize: 36, lineHeight: 1.25 }}>{restaurant.description}</p>
+            <p style={{ margin: "16px 0 0", fontFamily: "'Instrument Serif', serif", fontSize: "clamp(24px, 5vw, 36px)", lineHeight: 1.25 }}>{restaurant.description}</p>
             <div className="grid-3" style={{ marginTop: 26, display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
               <Fact label="Partnership" value={restaurant.partnership || "Independent"} muted={!restaurant.partnership} />
               <Fact label="Reviews" value={restaurant.reviewCount ? `${restaurant.reviewCount}` : "—"} />
@@ -222,13 +222,13 @@ export default function Restaurant() {
         </div>
       </section>
 
-      <section id="location" className="wrap" style={{ padding: "100px 28px 0" }}>
+      <section id="location" className="wrap section-pad" style={{ padding: "100px 28px 0" }}>
         <div className="grid-split" style={{ display: "grid", gridTemplateColumns: "1fr 0.72fr", gap: 26, alignItems: "stretch" }}>
           <a
             href={restaurant.mapsUrl}
             target="_blank"
             rel="noreferrer"
-            style={{ position: "relative", minHeight: 420, borderRadius: 32, overflow: "hidden", background: "#EDEFF5", border: "1px solid #ECEDF2", display: "block", color: "#111112" }}
+            style={{ position: "relative", minHeight: 280, borderRadius: 32, overflow: "hidden", background: "#EDEFF5", border: "1px solid #ECEDF2", display: "block", color: "#111112" }}
           >
             <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(#E2E5EE 1px,transparent 1px),linear-gradient(90deg,#E2E5EE 1px,transparent 1px)", backgroundSize: "58px 58px" }} />
             <div style={{ position: "absolute", top: "48%", left: "46%", transform: "translate(-50%,-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
@@ -272,11 +272,11 @@ export default function Restaurant() {
                 )}
               </div>
             </div>
-            <div style={{ marginTop: 18, display: "flex", gap: 10, flexWrap: "wrap" }}>
-              <a href={restaurant.directionsUrl} target="_blank" rel="noreferrer" className="btn-dark pill" style={{ display: "inline-block", background: "#131316", color: "#FFFFFF", borderRadius: 999, padding: "15px 26px", fontSize: 14, fontWeight: 600 }}>
+            <div style={{ marginTop: 18, display: "flex", gap: 10, flexWrap: "wrap" }} className="mobile-stack">
+              <a href={restaurant.directionsUrl} target="_blank" rel="noreferrer" className="btn-dark pill mobile-full" style={{ display: "inline-block", background: "#131316", color: "#FFFFFF", borderRadius: 999, padding: "15px 26px", fontSize: 14, fontWeight: 600, textAlign: "center" }}>
                 Get directions →
               </a>
-              <a href={restaurant.sourceUrl} target="_blank" rel="noreferrer" className="btn-outline pill" style={{ display: "inline-block", border: "1px solid #E6E7EE", background: "#FFFFFF", borderRadius: 999, padding: "15px 26px", fontSize: 14, fontWeight: 600, color: "#111112" }}>
+              <a href={restaurant.sourceUrl} target="_blank" rel="noreferrer" className="btn-outline pill mobile-full" style={{ display: "inline-block", border: "1px solid #E6E7EE", background: "#FFFFFF", borderRadius: 999, padding: "15px 26px", fontSize: 14, fontWeight: 600, color: "#111112", textAlign: "center" }}>
                 Source listing →
               </a>
             </div>
@@ -284,7 +284,7 @@ export default function Restaurant() {
         </div>
       </section>
 
-      <section className="wrap" style={{ padding: "100px 28px 96px" }}>
+      <section className="wrap section-pad" style={{ padding: "100px 28px 96px" }}>
         <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 24, flexWrap: "wrap" }}>
           <h2 style={{ margin: 0, fontSize: 40, letterSpacing: "-0.04em", fontWeight: 700 }}>
             You might also <span className="italic">like</span>
