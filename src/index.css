@@ -1,64 +1,77 @@
+/*
+ * Deal Scanner design system.
+ *
+ * Two rules hold the whole thing together:
+ *   1. Text never sits on a background of its own hue. Badges are ink-on-white,
+ *      white-on-ink, or white-on-accent. No green text on a green chip.
+ *   2. One accent (burnt orange) marks deals and nothing else.
+ */
+
+:root {
+  --ink: #141416;
+  --ink-2: #40404a;
+  --ink-3: #6e6e7a;
+  --line: #e7e7ec;
+  --line-soft: #f0f0f4;
+  --surface: #ffffff;
+  --surface-2: #fafafa;
+  --surface-3: #f4f4f6;
+  --accent: #c2500d;
+  --accent-ink: #ffffff;
+  --r-card: 20px;
+  --r-panel: 28px;
+  --nav-h: 64px;
+}
+
 html, body, #root {
   margin: 0;
   padding: 0;
-  background: #ffffff;
   min-height: 100%;
+}
+
+/*
+ * One soft wash for the whole page: white through the middle where the reading
+ * happens, cool light at the edges. Fixed so it never tiles or scrolls.
+ */
+body {
+  background:
+    radial-gradient(68% 52% at 10% 0%, #c8e0f6 0%, rgba(200, 224, 246, 0) 58%),
+    radial-gradient(60% 46% at 92% 2%, #c9e8f1 0%, rgba(201, 232, 241, 0) 60%),
+    radial-gradient(74% 52% at 50% 100%, #d5dbf5 0%, rgba(213, 219, 245, 0) 62%),
+    linear-gradient(180deg, #e6f1fb 0%, #fcfdff 32%, #fcfdff 68%, #e6ebf8 100%);
+  background-attachment: fixed;
+  background-color: #fdfeff;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  -webkit-text-size-adjust: 100%;
-}
-
 body {
-  color: #111112;
+  color: var(--ink);
   font-family: Archivo, Helvetica, sans-serif;
-  overflow-x: hidden;
-}
-
-img,
-video,
-svg {
-  max-width: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: #111112;
+  color: var(--ink);
   text-decoration: none;
-}
-
-a:hover {
-  color: #e2761b;
 }
 
 button,
 input {
   font-family: inherit;
-  font-size: 16px; /* prevents iOS zoom on focus */
 }
 
-@keyframes ds-ticker {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-.ds-ticker {
-  display: flex;
-  width: max-content;
-  animation: ds-ticker 34s linear infinite;
-  gap: 56px;
-  font-size: 19px;
-  font-weight: 600;
-  color: #9a9aa6;
-  letter-spacing: -0.02em;
+/* Hover feedback is deliberately absent site-wide. Keyboard focus is not. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 .ds-rail {
   scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
 }
 
 .ds-rail::-webkit-scrollbar {
@@ -70,14 +83,7 @@ input {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
-}
-
-@media (hover: hover) {
-  a:hover .image-slot,
-  .ds-zoom:hover .image-slot {
-    transform: scale(1.06);
-  }
+  background: var(--surface-3);
 }
 
 .italic {
@@ -86,85 +92,8 @@ input {
   font-weight: 400;
 }
 
-.logo,
-.logo:hover {
-  color: #ffffff;
-}
-
-.nav-link {
-  color: #c9c9d2;
-  white-space: nowrap;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: #ffffff;
-}
-
-.btn-start:hover {
-  background: #f5a04a !important;
-  color: #111112 !important;
-}
-
-.btn-dark:hover {
-  background: #e2761b !important;
-  color: #ffffff !important;
-}
-
-.btn-soft:hover {
-  background: #131316 !important;
-  color: #ffffff !important;
-}
-
-.btn-outline:hover {
-  background: #131316 !important;
-  color: #ffffff !important;
-  border-color: #131316 !important;
-}
-
-.btn-ghost:hover {
-  border-color: #ffffff !important;
-  color: #ffffff !important;
-}
-
-.chip:hover {
-  background: #131316 !important;
-  color: #ffffff !important;
-}
-
-.partner-row:hover {
-  background: #fafafd !important;
-  color: #111112 !important;
-}
-
-.card-dark:hover {
-  background: #e2761b !important;
-  color: #ffffff !important;
-}
-
-.muted-link,
-.muted-link:hover {
-  color: #8f909c;
-}
-
-.muted-link:hover {
-  color: #e2761b;
-}
-
-.keep-white,
-.keep-white:hover {
-  color: #ffffff;
-}
-
-.pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .page {
-  background: #ffffff;
-  color: #111112;
+  color: var(--ink);
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -172,46 +101,366 @@ input {
 .wrap {
   max-width: 1180px;
   margin: 0 auto;
-  width: 100%;
 }
 
-.nav-wrap {
-  position: relative;
-  max-width: 1240px;
+/* ---------- Navigation ---------- */
+
+.ds-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.ds-nav-inner {
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 20px 28px 0;
-}
-
-.ds-header {
+  height: var(--nav-h);
+  padding: 0 28px;
   display: flex;
   align-items: center;
-  gap: 28px;
-  background: #131316;
-  border-radius: 999px;
-  padding: 10px 10px 10px 24px;
-  box-shadow: 0 18px 40px -22px rgba(15, 15, 25, 0.55);
+  gap: 32px;
 }
 
-.ds-header nav {
+.ds-brand {
   display: flex;
-  gap: 28px;
+  align-items: center;
+  gap: 9px;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.ds-mark {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: var(--accent);
+  display: inline-block;
+}
+
+.ds-nav nav {
+  display: flex;
+  gap: 26px;
+  margin-left: auto;
   font-size: 14px;
-  margin: 0 auto;
-  color: #c9c9d2;
+  white-space: nowrap;
 }
 
-.ds-header .nav-cta {
-  flex-shrink: 0;
+.nav-link {
+  color: var(--ink-2);
 }
 
-.hero-wash {
-  position: relative;
-  background: #f6f7fb;
+.nav-link.active {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.ds-nav-cta {
+  flex: 0 0 auto;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 14px 24px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn-ink {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.btn-line {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.btn-sm {
+  padding: 11px 18px;
+  font-size: 13px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* ---------- Badges ---------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 7px 13px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.badge-deal {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.badge-ink {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.badge-line {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.badge-float {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--ink);
+}
+
+/* Status is typography, not a coloured pill. */
+.status {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+/* ---------- Coupon ---------- */
+
+/* The code is the product, so it carries the accent and nothing else does. */
+.coupon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 10px;
+  padding: 9px 13px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  background: var(--accent);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.34);
+  white-space: nowrap;
+}
+
+.coupon-sm {
+  padding: 7px 10px;
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+}
+
+.coupon-muted {
+  color: var(--ink-3);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+/* ---------- Search ---------- */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 8px 8px 22px;
+  box-shadow: 0 30px 60px -46px rgba(20, 20, 40, 0.5);
+}
+
+.search-bar input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 16px;
+  color: var(--ink);
+  height: 50px;
+}
+
+.search-bar input::placeholder {
+  color: #85858f;
+}
+
+.search-icon {
+  color: var(--ink-3);
+  font-size: 17px;
+  line-height: 1;
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  color: var(--ink);
   overflow: hidden;
 }
 
+.card-media {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-3);
+}
+
+/* ---------- Deal marquee ---------- */
+
+/*
+ * Two identical groups slide as one track; when the first has travelled its own
+ * width the second is exactly where it started, so the loop never shows a seam.
+ */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+}
+
+/* Slow enough that a card stays clickable for about six seconds. */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 88s linear infinite;
+}
+
+.marquee-group {
+  display: flex;
+  gap: 16px;
+  padding-right: 16px;
+}
+
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+.deal-slide {
+  position: relative;
+  flex: 0 0 268px;
+  height: 178px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: block;
+  color: #ffffff;
+  background: var(--surface-3);
+}
+
+.deal-slide .image-slot {
+  position: absolute;
+  inset: 0;
+}
+
+.deal-slide-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 8, 14, 0.9) 0%, rgba(8, 8, 14, 0.4) 52%, rgba(8, 8, 14, 0.06) 100%);
+}
+
+.deal-slide-body {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 16px 18px 18px;
+}
+
+.deal-slide-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.deal-slide-value {
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.deal-slide-fresh {
+  font-size: 11.5px;
+  color: #c9c9d6;
+  white-space: nowrap;
+}
+
+.deal-slide-title {
+  display: block;
+  font-size: 13px;
+  color: #e8e8f0;
+  margin-top: 5px;
+}
+
+.deal-slide-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.deal-slide-meta {
+  font-size: 12px;
+  color: #c4c4d0;
+  line-height: 1.3;
+  min-width: 0;
+}
+
+.deal-slide .coupon {
+  font-size: 11px;
+  padding: 7px 9px;
+  letter-spacing: 0.04em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+
+  .marquee {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .marquee::-webkit-scrollbar { display: none; }
+}
+
+.hero-sub {
+  margin: 24px auto 0;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
 .footer {
-  border-top: 1px solid #ecedf2;
+  border-top: 1px solid var(--line);
+  margin-top: 96px;
 }
 
 .footer-inner {
@@ -223,145 +472,223 @@ input {
   gap: 20px;
   flex-wrap: wrap;
   font-size: 13px;
-  color: #8f909c;
+  color: var(--ink-3);
 }
 
-.hero-avatars {
-  display: inline-flex;
-  align-items: center;
-  vertical-align: middle;
-  margin: 0 6px;
+/* ---------- Categories ---------- */
+
+.cats {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 
-.hero-avatar {
-  width: 58px;
-  height: 58px;
-  border-radius: 999px;
+.cat {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
   overflow: hidden;
-  border: 3px solid #ffffff;
+  color: var(--ink);
+}
+
+.cat-media {
+  position: relative;
+  height: 176px;
+  overflow: hidden;
+  background: var(--surface-3);
+}
+
+.cat-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 16, 0.28) 0%, rgba(10, 10, 16, 0.06) 60%);
+  pointer-events: none;
+}
+
+.cat-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+}
+
+.cat-body {
+  padding: 20px 20px 22px;
+}
+
+.cat-title {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.cat-copy {
+  margin: 8px 0 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  min-height: 44px;
+}
+
+.cat-go {
   display: inline-block;
+  margin-top: 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--accent);
 }
 
-.hero-avatar + .hero-avatar {
-  margin-left: -16px;
+/* ---------- How it works: three steps ---------- */
+
+.steps {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
 }
 
-.search-panel {
-  margin-top: 52px;
-  background: #ffffff;
-  border: 1px solid #ecedf2;
-  border-radius: 30px;
-  padding: 28px;
-  box-shadow: 0 40px 80px -50px rgba(20, 20, 40, 0.45);
+/*
+ * The photo drops back to a faded ground so the thing being demonstrated, the
+ * search field or the code, reads at full strength on top of it.
+ */
+.step-frame {
+  position: relative;
+  height: 230px;
+  border-radius: var(--r-card);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.step-frame .image-slot {
+  position: absolute;
+  inset: 0;
+}
+
+/* A dark layer over the photo; the demo and its labels sit on it in white. */
+.step-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 16, 0.42) 0%, rgba(10, 10, 16, 0.62) 100%);
+  pointer-events: none;
+}
+
+.step-stage {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+}
+
+.step-num {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.step-title {
+  margin: 8px 0 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.step-copy {
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 34ch;
+}
+
+/* Step 1: the real search field. */
+.demo-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 5px 5px 5px 14px;
+  box-shadow: 0 16px 34px -20px rgba(10, 10, 20, 0.75);
+}
+
+.demo-search-text {
+  flex: 1;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
   text-align: left;
 }
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #ffffff;
-  border: 1px solid #ecedf2;
+.demo-search-btn {
+  background: var(--ink);
+  color: #ffffff;
   border-radius: 999px;
-  padding: 9px 9px 9px 22px;
-  box-shadow: 0 30px 60px -46px rgba(20, 20, 40, 0.5);
-  max-width: 860px;
-  margin: 34px auto 0;
-}
-
-.search-bar input {
-  flex: 1;
-  min-width: 0;
-  border: none;
-  outline: none;
-  background: none;
-  height: 48px;
-  color: #111112;
-}
-
-.filter-bar {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #ecedf2;
-}
-
-.filter-count {
-  margin-left: auto;
-  padding-left: 16px;
-  font-size: 13px;
-  color: #8f909c;
+  padding: 8px 13px;
+  font-size: 11.5px;
+  font-weight: 600;
   white-space: nowrap;
 }
 
-.media-hero {
-  position: relative;
-  height: 520px;
-  border-radius: 32px;
-  overflow: hidden;
-  background: #f0f1f5;
-}
-
-.media-feature {
-  position: relative;
-  height: 430px;
-  border-radius: 24px;
-  overflow: hidden;
-  background: #f0f1f5;
-}
-
-.panel-dark {
-  background: #131316;
-  border-radius: 34px;
-  padding: 56px;
-  color: #ffffff;
-}
-
-.panel-dark-sm {
-  background: #131316;
-  border-radius: 34px;
-  padding: 48px;
-  color: #ffffff;
-}
-
-.offer-copy {
-  padding: 52px 48px;
-}
-
-.offer-title {
-  font-size: 66px;
-  line-height: 1;
-  letter-spacing: -0.045em;
-  font-weight: 700;
-  margin-top: 22px;
-  color: #ffffff;
-}
-
-.partner-row {
-  display: grid;
-  grid-template-columns: 112px 1fr auto;
-  gap: 18px;
+/* Step 2: the code going from masked to full. */
+.demo-reveal {
+  display: flex;
   align-items: center;
-  background: #ffffff;
-  border: 1px solid #ecedf2;
-  border-radius: 24px;
-  padding: 14px;
-  color: #111112;
+  justify-content: center;
+  gap: 10px;
 }
 
-.stat-value {
-  font-size: 74px;
+.demo-arrow {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 12px;
   line-height: 1;
-  letter-spacing: -0.05em;
-  font-weight: 700;
+  color: var(--ink);
 }
 
-.section-pad {
-  padding-left: 28px;
-  padding-right: 28px;
+.demo-caption {
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
 }
+
+/* Step 3: the code as the guest shows it. */
+.demo-redeem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.demo-redeem-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.35;
+}
+
+/* ---------- Responsive ---------- */
 
 @media (max-width: 1080px) {
   .grid-4,
@@ -372,40 +699,28 @@ input {
 
   .grid-split,
   .grid-split-wide,
-  .grid-search,
-  .grid-facts,
-  .grid-menu {
+  .grid-facts {
     grid-template-columns: 1fr !important;
   }
 
-  h1 { font-size: clamp(40px, 7vw, 62px) !important; }
-  h2 { font-size: clamp(28px, 4.5vw, 40px) !important; }
+  .steps { gap: 20px; }
+  .step-frame { height: 190px; }
+  .step-title { font-size: 22px; }
 
-  .ds-header {
-    flex-wrap: wrap !important;
-    border-radius: 26px !important;
-    gap: 14px !important;
-    padding: 12px 12px 12px 18px !important;
-  }
+  h1 { font-size: 58px !important; }
+  h2 { font-size: 38px !important; }
+}
 
-  .ds-header nav {
-    order: 3;
-    width: 100%;
-    overflow-x: auto;
-    justify-content: flex-start !important;
-    gap: 18px !important;
-    padding-bottom: 4px;
-    scrollbar-width: none;
-  }
-
-  .ds-header nav::-webkit-scrollbar {
+/* Below this the nav links stop fitting on one line, so it becomes brand plus action. */
+@media (max-width: 820px) {
+  .ds-nav nav {
     display: none;
   }
 
-  .media-hero { height: 380px; }
-  .media-feature { height: 300px; }
-  .offer-title { font-size: 48px; }
-  .stat-value { font-size: 56px; }
+  .ds-nav-inner {
+    gap: 16px;
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 720px) {
@@ -415,221 +730,68 @@ input {
   .grid-2,
   .grid-split,
   .grid-split-wide,
-  .grid-search,
   .grid-facts,
   .grid-menu,
-  .grid-offers,
+  .grid-deals,
+  .steps,
+  .cats,
   .span-2 {
     grid-template-columns: 1fr !important;
     grid-column: auto !important;
   }
 
-  .nav-wrap,
-  .section-pad,
-  .pad-x,
-  .wrap > section,
-  section.wrap,
+  section,
   .footer-inner,
-  .filter-bar .pad-x {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-
-  .nav-wrap {
-    padding-top: 14px !important;
-  }
-
-  .ds-header {
-    gap: 10px !important;
-    padding: 10px !important;
-    border-radius: 22px !important;
-  }
-
-  .ds-header .logo {
-    font-size: 15px !important;
-    gap: 8px !important;
-  }
-
-  .ds-header .nav-cta a,
-  .ds-header .nav-cta button {
-    padding: 10px 14px !important;
-    font-size: 13px !important;
-    min-height: 40px;
-  }
-
-  .ds-header nav {
-    gap: 14px !important;
-    font-size: 13px !important;
-    padding: 0 4px 6px;
+  .ds-nav-inner,
+  .pad-x {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
   }
 
   .rail-card {
-    flex: 0 0 min(82vw, 320px) !important;
+    flex: 0 0 82vw !important;
   }
 
   h1 {
-    font-size: clamp(34px, 9vw, 42px) !important;
+    font-size: 40px !important;
     line-height: 1.05 !important;
   }
 
-  h2 {
-    font-size: clamp(26px, 7vw, 32px) !important;
-  }
+  h2 { font-size: 30px !important; }
 
-  .hero-avatars {
-    display: none;
-  }
-
-  .search-panel {
-    margin-top: 28px;
-    border-radius: 22px;
-    padding: 18px;
-  }
-
-  .grid-search {
-    gap: 10px !important;
-  }
-
-  .grid-search > * {
-    width: 100%;
-  }
-
-  .grid-search input,
-  .grid-search button,
-  .grid-search a {
-    width: 100%;
+  .hero-sub {
+    white-space: normal;
+    max-width: 34ch;
+    font-size: 16px;
   }
 
   .search-bar {
     flex-wrap: wrap;
-    border-radius: 22px;
-    padding: 12px;
-    gap: 8px;
-    margin-top: 22px;
+    border-radius: 24px;
+    padding: 14px;
   }
 
   .search-bar input {
     width: 100%;
-    flex: 1 1 100%;
+    flex-basis: 100%;
     height: 44px;
-    padding: 0 8px;
   }
 
-  .search-bar button {
-    flex: 1 1 auto;
-    min-width: calc(50% - 8px);
-    height: 44px !important;
-    padding: 0 14px !important;
+  .search-bar .btn {
+    width: 100%;
   }
 
-  .filter-count {
-    display: none;
+  .deal-slide {
+    flex: 0 0 268px;
+    height: 184px;
   }
 
-  .media-hero {
-    height: 260px;
-    border-radius: 22px;
-  }
+  .deal-slide-value { font-size: 29px; }
 
-  .media-feature {
-    height: 220px;
-    border-radius: 18px;
-  }
+  .step-frame { height: 200px; }
 
-  .panel-dark,
-  .panel-dark-sm {
-    padding: 28px 20px !important;
-    border-radius: 24px !important;
-  }
 
-  .offer-copy {
-    padding: 28px 22px !important;
-  }
 
-  .offer-title {
-    font-size: 36px !important;
-  }
 
-  .partner-row {
-    grid-template-columns: 72px 1fr !important;
-    gap: 12px !important;
-  }
 
-  .partner-row > div:first-child {
-    height: 72px !important;
-  }
-
-  .partner-row > :last-child {
-    display: none;
-  }
-
-  .stat-value {
-    font-size: 42px !important;
-  }
-
-  .section-pad {
-    padding-top: 56px !important;
-  }
-
-  #upcoming.section-pad,
-  #partnered.section-pad,
-  #offers.section-pad,
-  #how.section-pad,
-  #menu,
-  #location {
-    padding-top: 56px !important;
-  }
-
-  .grid-facts {
-    display: flex !important;
-    overflow-x: auto;
-    gap: 0;
-  }
-
-  .grid-facts > div {
-    min-width: 140px;
-    flex: 0 0 auto;
-    border-left: 1px solid #f1f2f6;
-  }
-
-  .grid-facts > div:first-child {
-    border-left: none;
-  }
-
-  .ds-ticker {
-    font-size: 15px;
-    gap: 28px;
-  }
-
-  button,
-  a.pill {
-    min-height: 44px;
-  }
-
-  .mobile-stack {
-    flex-direction: column !important;
-    align-items: stretch !important;
-  }
-
-  .mobile-full {
-    width: 100% !important;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 32px !important;
-  }
-
-  .media-hero {
-    height: 220px;
-  }
-
-  .offer-title {
-    font-size: 30px !important;
-  }
-
-  .search-bar button {
-    min-width: 100%;
-  }
 }

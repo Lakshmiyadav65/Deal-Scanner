@@ -23,10 +23,15 @@ const SLUGS = [
   "simply-south-indian-vegetarian-restaurant-irving",
   "urban-tadka-irving",
   "bawarchi-indian-cuisine-irvingtx-irving",
-  // Dallas / Plano
+  // Dallas
   "india-palace-dallas",
   "hyderabadi-biryani-bbq-dallas",
+  "roti-grill-dallas",
+  "the-dhaba-dallas",
+  // Plano
   "kuppanna-plano",
+  "the-yellow-chilli-plano",
+  "jashan-indian-fine-dining-plano",
 ];
 
 function extractJsonLd(html) {

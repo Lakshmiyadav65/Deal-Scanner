@@ -559,6 +559,79 @@
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.8706702,-96.7660629"
   },
   {
+    "sourceSlug": "roti-grill-dallas",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/roti-grill-dallas",
+    "name": "Roti Grill",
+    "description": null,
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAELBGpR7BygzIL7XuvjKgBbE6JyhZPhdicLOcpaDO29SScyPQbtBUu0iPk6g7o3HqeXQy4LcqIWS-YNyZOTb2C-KR_RUigAjqUIa58o5p-qRA4mJBBKUxCvo-LIhZ2i0h4OIGOigBYW0Q66=w800-h500-k-no",
+    "phone": "+1 214-953-1011",
+    "website": "https://rotigrill.us/",
+    "cuisine": "Indian",
+    "cuisineTags": [],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "Near American Airline Center, 2401 Victory Park Ln #120, Dallas, TX 75219",
+    "city": "Dallas",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.7877258,
+    "lng": -96.8094625,
+    "rating": 4.7,
+    "reviewCount": 281,
+    "hours": {
+      "Monday": "11AM-10PM",
+      "Tuesday": "11AM-10PM",
+      "Wednesday": "11AM-10PM",
+      "Thursday": "11AM-10PM",
+      "Friday": "11AM-11PM",
+      "Saturday": "11AM-11PM",
+      "Sunday": "11AM-10PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.7877258%2C-96.8094625",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.7877258,-96.8094625"
+  },
+  {
+    "sourceSlug": "the-dhaba-dallas",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/the-dhaba-dallas",
+    "name": "The Dhaba",
+    "description": null,
+    "image": "https://lh3.googleusercontent.com/gps-proxy/ALd4DhF3DU9fP4M2-skwBOyDL4x90t4uxpdGr3mie7tyk-8Ek1OHJ1bFZqWKgwZEwpLTK719jstnpCKIB7zuZZty8j8Ts5u3P8kLdK5VrBpOS1XHTx_9wrERhaadXOrvT5YuL0qZ9sz-Dg7h9Ib0sA-bMDF0T6jr34HYVUthpkZLotAGx3tBTVQ-Ug8Y=w800-h500-k-no",
+    "phone": "+1 469-595-2700",
+    "website": "https://thedhaba.us/",
+    "cuisine": "Indian",
+    "cuisineTags": [
+      {
+        "slug": "punjabi",
+        "label": "Punjabi"
+      }
+    ],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "5601 Sears St Ste B, Dallas, TX 75206",
+    "city": "Dallas",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.8148032,
+    "lng": -96.7721157,
+    "rating": 4.9,
+    "reviewCount": 31,
+    "hours": {
+      "Monday": "9AM-5PM",
+      "Tuesday": "9AM-5PM",
+      "Wednesday": "9AM-5PM",
+      "Thursday": "9AM-5PM",
+      "Friday": "9AM-5PM",
+      "Saturday": "Closed",
+      "Sunday": "Closed"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.8148032%2C-96.7721157",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.8148032,-96.7721157"
+  },
+  {
     "sourceSlug": "kuppanna-plano",
     "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/kuppanna-plano",
     "name": "Kuppanna",
@@ -591,5 +664,73 @@
     },
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.0172432%2C-96.7341555",
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=33.0172432,-96.7341555"
+  },
+  {
+    "sourceSlug": "the-yellow-chilli-plano",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/the-yellow-chilli-plano",
+    "name": "The Yellow Chilli",
+    "description": "Colorful dining room & bar with unique design features & menu filled with traditional Indian fare.",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGE5m92wHK0ImuL5XGGeFU2oIJ1LUNkIjh-fHwRwdfv37RgemdtZn8X4vKFCHYuf_CbKIGW5Qfn4fcCnBE_k5NQDjCzTTpciXucLo2PgNWrrnD-X6LQE3na-L80E98IYp8HgJs1ow=w800-h500-k-no",
+    "phone": "+1 469-626-0419",
+    "website": "https://theyellowchillidallas.com/",
+    "cuisine": "Indian",
+    "cuisineTags": [],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "5700 Legacy Dr Ste A-9, Plano, TX 75024",
+    "city": "Plano",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 33.0774337,
+    "lng": -96.81934799999999,
+    "rating": 4,
+    "reviewCount": 2316,
+    "hours": {
+      "Monday": "11:30AM-2:30PM, 5:30-10PM",
+      "Tuesday": "11:30AM-2:30PM, 5:30-10PM",
+      "Wednesday": "11:30AM-2:30PM, 5:30-10PM",
+      "Thursday": "11:30AM-2:30PM, 5:30-10PM",
+      "Friday": "11:30AM-2:30PM, 5:30-10PM",
+      "Saturday": "12-3PM, 6-10PM",
+      "Sunday": "12-3PM, 6-10PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.0774337%2C-96.81934799999999",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=33.0774337,-96.81934799999999"
+  },
+  {
+    "sourceSlug": "jashan-indian-fine-dining-plano",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/jashan-indian-fine-dining-plano",
+    "name": "Jashan Indian Fine Dining",
+    "description": null,
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGhsZYKzJLhbingmNfG52EFiwdu3d5p7UIXFHMp1Ch1yTtUmB_YW24gZEM0RcGc9RmDwx7llI8nIcWGzAhQOJh5xkdLnMDPkL8MjtnFPr2WmTTNtsHrQHNAem29EyHCPiA4g23Sdvk4e0Kt=w800-h500-k-no",
+    "phone": "+1 469-994-9955",
+    "website": "https://www.jashan.us/",
+    "cuisine": "Indian",
+    "cuisineTags": [],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "7401 Lone Star Dr Ste B 120, Plano, TX 75024",
+    "city": "Plano",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 33.0797146,
+    "lng": -96.8231191,
+    "rating": 4.4,
+    "reviewCount": 394,
+    "hours": {
+      "Monday": "11:30AM-2:30PM, 4:30-10PM",
+      "Tuesday": "11:30AM-2:30PM, 4:30-10PM",
+      "Wednesday": "11:30AM-2:30PM, 4:30-10PM",
+      "Thursday": "11:30AM-2:30PM, 4:30-10PM",
+      "Friday": "11:30AM-2:30PM, 4:30-10PM",
+      "Saturday": "11AM-3PM, 6-10PM",
+      "Sunday": "11AM-3PM, 6-10PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.0797146%2C-96.8231191",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=33.0797146,-96.8231191"
   }
 ]

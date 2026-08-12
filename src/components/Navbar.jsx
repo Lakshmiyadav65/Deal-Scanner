@@ -1,39 +1,46 @@
 import { Link, NavLink } from "react-router-dom";
 
+/** Three links, one action. Anything longer stops fitting on one line. */
+const menus = {
+  home: [
+    { to: "/explore", label: "Places", route: true },
+    { to: "/#deals", label: "Deals" },
+    { to: "/#how", label: "How it works" },
+  ],
+  restaurant: [
+    { to: "/explore", label: "Places", route: true },
+    { to: "#deals", label: "Deals", hash: true },
+    { to: "#location", label: "Location", hash: true },
+  ],
+};
+
 export default function Navbar({ variant = "home", cta }) {
-  const restaurant = variant === "restaurant";
+  const links = menus[variant] || menus.home;
 
   return (
-    <div className="nav-wrap" data-pad="true">
-      <header className="ds-header" data-nav="true">
-        <Link
-          to="/"
-          className="logo"
-          style={{ display: "flex", alignItems: "center", gap: 10, fontWeight: 700, fontSize: 17, letterSpacing: "-0.02em" }}
-        >
-          <span style={{ width: 22, height: 22, borderRadius: 7, background: "linear-gradient(135deg,#F5A04A,#E2761B)", display: "inline-block", flexShrink: 0 }} />
+    <header className="ds-nav">
+      <div className="ds-nav-inner">
+        <Link to="/" className="ds-brand">
+          <span className="ds-mark" />
           Deal Scanner
         </Link>
+
         <nav>
-          <NavLink to="/explore" className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}>
-            Explore
-          </NavLink>
-          <Link to="/#upcoming" className="nav-link">Upcoming</Link>
-          <Link to="/#partnered" className="nav-link">Partnered</Link>
-          {restaurant ? (
-            <>
-              <a href="#menu" className="nav-link">Menu</a>
-              <a href="#location" className="nav-link">Location</a>
-            </>
-          ) : (
-            <>
-              <Link to="/#offers" className="nav-link">Offers</Link>
-              <Link to="/#how" className="nav-link">How it works</Link>
-            </>
+          {links.map((link) =>
+            link.hash ? (
+              <a key={link.to} href={link.to} className="nav-link">{link.label}</a>
+            ) : link.route ? (
+              <NavLink key={link.to} to={link.to} className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}>
+                {link.label}
+              </NavLink>
+            ) : (
+              <Link key={link.to} to={link.to} className="nav-link">{link.label}</Link>
+            )
           )}
         </nav>
-        {cta ? <div className="nav-cta">{cta}</div> : null}
-      </header>
-    </div>
+
+        <div className="ds-nav-cta">{cta}</div>
+      </div>
+    </header>
   );
 }

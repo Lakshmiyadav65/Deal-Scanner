@@ -1,155 +1,158 @@
+import { dealsFor } from "./deals.js";
+import { buildImages } from "./images.js";
 import scraped from "./scraped-restaurants.json";
 
 export const cities = ["Fort Worth", "Arlington", "Irving", "Dallas", "Plano"];
 
-/** Manual enrichments for Deal Scanner filters / copy (real listings still come from scrape). */
+/** Manual enrichments for Deal Scanner filters and copy. Listings stay from the scrape. */
 const enrichments = {
   "hyderabad-house-fort-worth": {
     slug: "hyderabad-house",
+    shortName: "Hyderabad House",
     partnered: true,
     partnership: "Launch partner",
-    tagsExtra: ["partnered", "offers", "hyderabadi"],
-    offer: {
-      badge: "Welcome offer",
-      headline: "20% off",
-      italic: "your first visit",
-      cardTitle: "20% off first visit",
-      cardLabel: "20% OFF",
-      note: "Ask in restaurant",
-      detail: "Illustrative Deal Scanner welcome offer. Confirm terms with the restaurant.",
-    },
+    tagsExtra: ["hyderabadi"],
     blurb: "Hyderabadi dum biryani, haleem and regional specialties at Heritage Trace in Fort Worth.",
   },
   "curry-cowboys-fort-worth": {
     slug: "curry-cowboys",
+    shortName: "Curry Cowboys",
     partnered: true,
     partnership: "Community partner",
-    tagsExtra: ["partnered", "offers", "north"],
+    tagsExtra: ["north"],
     cuisineFallback: ["North Indian"],
-    offer: {
-      badge: "Offer",
-      headline: "15% off",
-      italic: "weekday lunch",
-      cardTitle: "15% off lunch",
-      cardLabel: "15% OFF",
-      note: "Weekdays",
-      detail: "Illustrative Deal Scanner lunch offer. Confirm terms with the restaurant.",
-    },
-    blurb: "North Indian favorites in Fort Worth — highly rated neighborhood spot.",
+    blurb: "North Indian favorites in Fort Worth, a highly rated neighborhood spot.",
   },
   "tikka-bites-indian-cuisine-fort-worth": {
     slug: "tikka-bites",
+    shortName: "Tikka Bites",
     cuisineFallback: ["North Indian"],
     tagsExtra: ["north"],
     blurb: "Indian cuisine on Boat Club Road in Fort Worth.",
   },
   "texas-indian-cuisine-fort-worth": {
     slug: "texas-indian-cuisine",
+    shortName: "Texas Indian Cuisine",
     cuisineFallback: ["North Indian"],
     tagsExtra: ["north"],
     blurb: "Indian dining in Fort Worth.",
   },
   "swad-indian-and-nepalese-cuisine-fort-worth-fort-worth": {
     slug: "swad-fort-worth",
+    shortName: "Swad Indian & Nepalese",
     cuisineFallback: ["North Indian"],
     tagsExtra: ["north"],
     blurb: "Indian and Nepalese cuisine in Fort Worth.",
   },
   "namaste-grill-bar-fort-worth-fort-worth": {
     slug: "namaste-grill",
+    shortName: "Namaste Grill & Bar",
     cuisineFallback: ["North Indian"],
-    tagsExtra: ["north", "partnered"],
+    tagsExtra: ["north"],
     partnered: true,
     partnership: "Partner kitchen",
     blurb: "Indian grill and bar in Fort Worth.",
   },
   "annampuram-authentic-south-indian-restaurant-arlington": {
     slug: "annampuram",
+    shortName: "Annampuram",
     partnered: true,
     partnership: "Launch collaboration",
-    tagsExtra: ["partnered", "offers", "south"],
-    offer: {
-      badge: "Opening week style",
-      headline: "Free dessert",
-      italic: "with qualifying order",
-      cardTitle: "Free dessert",
-      cardLabel: "Free dessert",
-      note: "Ask server",
-      detail: "Illustrative Deal Scanner offer. Confirm terms with the restaurant.",
-    },
+    tagsExtra: ["south"],
     blurb: "Authentic South Indian restaurant in Arlington.",
   },
   "tandoor-indian-restaurant-arlington": {
     slug: "tandoor-arlington",
+    shortName: "Tandoor",
     tagsExtra: ["north"],
     blurb: "Mughlai and North Indian tandoor cooking in Arlington.",
   },
   "saffron-kitchen-and-bar-arlington": {
     slug: "saffron-kitchen",
+    shortName: "Saffron Kitchen & Bar",
     cuisineFallback: ["North Indian"],
-    tagsExtra: ["north", "offers"],
-    offer: {
-      badge: "Offer",
-      headline: "2 for 1",
-      italic: "selected appetizers",
-      cardTitle: "2 for 1 apps",
-      cardLabel: "2 for 1",
-      note: "Limited hours",
-      detail: "Illustrative Deal Scanner offer. Confirm terms with the restaurant.",
-    },
+    tagsExtra: ["north"],
     blurb: "Indian kitchen and bar in Arlington.",
   },
   "spices-of-india-kitchen-restaurant-catering-irving": {
     slug: "spices-of-india",
+    shortName: "Spices of India",
     tagsExtra: ["north", "south"],
     cuisineFallback: ["North Indian", "South Indian"],
-    blurb: "Restaurant and catering in Irving — Indian kitchen favorites.",
+    blurb: "Restaurant and catering in Irving, serving Indian kitchen favorites.",
   },
   "simply-south-indian-vegetarian-restaurant-irving": {
     slug: "simply-south",
+    shortName: "Simply South",
     partnered: true,
     partnership: "Community partner",
-    tagsExtra: ["partnered", "south", "vegetarian"],
+    tagsExtra: ["south", "vegetarian"],
     dietary: ["vegetarian"],
     blurb: "South Indian vegetarian restaurant in Irving.",
   },
   "urban-tadka-irving": {
     slug: "urban-tadka",
+    shortName: "Urban Tadka",
     tagsExtra: ["north"],
     cuisineFallback: ["North Indian"],
-    blurb: "Punjabi / North Indian kitchen in Irving.",
+    blurb: "Punjabi and North Indian kitchen in Irving.",
   },
   "bawarchi-indian-cuisine-irvingtx-irving": {
     slug: "bawarchi-irving",
+    shortName: "Bawarchi",
     cuisineFallback: ["Hyderabadi"],
     tagsExtra: ["hyderabadi"],
     blurb: "Hyderabadi-style Indian cuisine in Irving.",
   },
   "india-palace-dallas": {
     slug: "india-palace",
+    shortName: "India Palace",
     cuisineFallback: ["North Indian"],
     tagsExtra: ["north"],
     blurb: "Classic Indian dining in Dallas.",
   },
   "hyderabadi-biryani-bbq-dallas": {
     slug: "hyderabadi-biryani-bbq",
-    tagsExtra: ["hyderabadi", "north", "offers"],
-    offer: {
-      badge: "Offer",
-      headline: "Family pack",
-      italic: "biryani deal",
-      cardTitle: "Family biryani",
-      cardLabel: "Deal",
-      note: "Ask counter",
-      detail: "Illustrative Deal Scanner deal. Confirm pricing with the restaurant.",
-    },
+    shortName: "Hyderabadi Biryani & BBQ",
+    tagsExtra: ["hyderabadi", "north"],
     blurb: "Hyderabadi biryani and BBQ in Dallas.",
   },
   "kuppanna-plano": {
     slug: "kuppanna",
+    shortName: "Kuppanna",
     cuisineFallback: ["South Indian"],
     tagsExtra: ["south"],
     blurb: "South Indian restaurant in Plano.",
+  },
+  "roti-grill-dallas": {
+    slug: "roti-grill",
+    shortName: "Roti Grill",
+    cuisineFallback: ["North Indian"],
+    tagsExtra: ["north"],
+    blurb: "Fast Indian grill and rotis in Dallas.",
+  },
+  "the-dhaba-dallas": {
+    slug: "the-dhaba",
+    shortName: "The Dhaba",
+    cuisineFallback: ["Punjabi"],
+    tagsExtra: ["north"],
+    partnered: true,
+    partnership: "Partner kitchen",
+    blurb: "Punjabi dhaba cooking in Dallas.",
+  },
+  "the-yellow-chilli-plano": {
+    slug: "yellow-chilli",
+    shortName: "The Yellow Chilli",
+    cuisineFallback: ["North Indian"],
+    tagsExtra: ["north"],
+    blurb: "Modern Indian dining in Plano.",
+  },
+  "jashan-indian-fine-dining-plano": {
+    slug: "jashan",
+    shortName: "Jashan Fine Dining",
+    cuisineFallback: ["North Indian"],
+    tagsExtra: ["north"],
+    blurb: "Indian fine dining in Plano.",
   },
 };
 
@@ -165,8 +168,8 @@ function cuisineLabel(tags, fallback = []) {
   return merged[0] || "Indian";
 }
 
-function buildTags(raw, extra = [], dietary = []) {
-  const tags = new Set(["indian", "open"]);
+function buildTags(raw, extra = [], dietary = [], hasDeals = false, partnered = false) {
+  const tags = new Set(["indian"]);
   for (const t of raw.cuisineTags || []) {
     if (t.slug === "hyderabadi") tags.add("hyderabadi");
     if (t.slug === "south-indian") tags.add("south");
@@ -175,7 +178,8 @@ function buildTags(raw, extra = [], dietary = []) {
   }
   dietary.forEach((d) => tags.add(d));
   extra.forEach((t) => tags.add(t));
-  if (tags.has("partnered") === false && enrichments[raw.sourceSlug]?.partnered) tags.add("partnered");
+  if (hasDeals) tags.add("deals");
+  if (partnered) tags.add("partnered");
   return [...tags];
 }
 
@@ -189,20 +193,27 @@ function relatedFor(city, slug, all) {
   return [...sameCity, ...others].slice(0, 4);
 }
 
-function normalize(raw) {
+function normalize(raw, index) {
   const boost = enrichments[raw.sourceSlug] || {};
+  const slug = boost.slug || raw.sourceSlug;
   const { lead, italic } = splitName(raw.name);
   const cuisineFallback = boost.cuisineFallback || [];
   const cuisine = cuisineLabel(raw.cuisineTags, cuisineFallback);
   const dietary = boost.dietary || [];
-  const img = raw.image || "https://loremflickr.com/1200/900/indian,restaurant?lock=1";
   const cityName = raw.city || "Texas";
+  const deals = dealsFor(slug);
+  const partnered = Boolean(boost.partnered);
+  const tags = buildTags(raw, boost.tagsExtra || [], dietary, deals.length > 0, partnered);
 
   return {
-    slug: boost.slug || raw.sourceSlug,
+    slug,
     sourceSlug: raw.sourceSlug,
     sourceUrl: raw.sourceUrl,
+    category: "restaurants",
     name: raw.name,
+    // Scraped names run long ("Simply South - Indian Vegetarian Restaurant").
+    // Cards use the short form so they do not wrap to three lines.
+    shortName: boost.shortName || raw.name,
     lead,
     italic,
     cuisine,
@@ -223,29 +234,20 @@ function normalize(raw) {
     rating: raw.rating,
     reviewCount: raw.reviewCount,
     hours: hoursList(raw.hours),
-    status: "open",
-    partnered: Boolean(boost.partnered),
+    partnered,
     partnership: boost.partnership || null,
-    tags: buildTags(raw, boost.tagsExtra || [], dietary),
-    offer: boost.offer || null,
-    blurb: boost.blurb || `${raw.name} — Indian restaurant in ${cityName}, TX.`,
+    tags,
+    deals,
+    topDeal: deals[0] || null,
+    blurb: boost.blurb || `Indian restaurant in ${cityName}, TX.`,
     description:
       raw.description ||
       `${raw.name} is an Indian restaurant in ${cityName}, Texas. View hours, ratings, and get directions to the original location.`,
-    images: {
-      hero: img,
-      card: img,
-      partner: img,
-      offer: img,
-      offerCard: img,
-      menu: img,
-      about: img,
-      thumbs: [img, img, img],
-    },
+    images: buildImages(tags, index),
     menu: {
       Popular: [
         { name: "Chef's specials", desc: "See full menu at the restaurant", price: "Ask in restaurant" },
-        { name: "Vegetarian options", desc: "Available — confirm with staff", price: "Ask in restaurant" },
+        { name: "Vegetarian options", desc: "Available, confirm with staff", price: "Ask in restaurant" },
         { name: "Biryani & curries", desc: "Regional Indian favorites", price: "Ask in restaurant" },
         { name: "Tandoor & breads", desc: "When available", price: "Ask in restaurant" },
       ],
@@ -264,34 +266,58 @@ export function getRestaurant(slug) {
   return restaurants.find((r) => r.slug === slug || r.sourceSlug === slug);
 }
 
-export function searchRestaurants({ query = "", city = "", status = "All" } = {}) {
+export const dealsTotal = restaurants.reduce((n, r) => n + r.deals.length, 0);
+
+export function countInCategory(slug) {
+  return restaurants.filter((r) => r.category === slug).length;
+}
+
+/**
+ * One search field has to cover both "my area" and "that place I heard about",
+ * so a query that names a city filters by city and anything else is free text.
+ */
+export function resolveQuery(input = "") {
+  const q = input.trim();
+  if (!q) return { city: "", query: "" };
+
+  const city = cities.find(
+    (c) => c.toLowerCase() === q.toLowerCase() || c.toLowerCase().startsWith(q.toLowerCase())
+  );
+  if (city) return { city, query: "" };
+
+  // Some listings carry the city in the address rather than the name.
+  const byAddress = cities.find((c) => q.toLowerCase().includes(c.toLowerCase()));
+  if (byAddress) return { city: byAddress, query: "" };
+
+  return { city: "", query: q };
+}
+
+const filterTags = {
+  All: null,
+  Deals: "deals",
+  Partnered: "partnered",
+  Hyderabadi: "hyderabadi",
+  "South Indian": "south",
+  "North Indian": "north",
+  Vegetarian: "vegetarian",
+};
+
+export function searchRestaurants({ query = "", city = "", filter = "All", category = "" } = {}) {
   const q = query.trim().toLowerCase();
-  const statusMap = {
-    "Coming Soon": "coming",
-    Partnered: "partnered",
-    Offers: "offers",
-    Indian: "indian",
-    Hyderabadi: "hyderabadi",
-    "South Indian": "south",
-    "North Indian": "north",
-    Vegetarian: "vegetarian",
-    "Coming soon": "coming",
-    "Has an offer": "offers",
-    "Any status": null,
-    All: null,
-  };
-  const tag = statusMap[status] ?? null;
+  const tag = filterTags[filter] ?? null;
 
   return restaurants.filter((r) => {
+    const matchesCategory = !category || r.category === category;
     const matchesQuery =
       !q ||
       r.name.toLowerCase().includes(q) ||
       r.cuisine.toLowerCase().includes(q) ||
       r.blurb.toLowerCase().includes(q) ||
+      r.cityName.toLowerCase().includes(q) ||
       r.address?.toLowerCase().includes(q) ||
       r.tags.some((t) => t.includes(q));
     const matchesCity = !city || r.cityName === city;
-    const matchesStatus = !tag || r.tags.includes(tag);
-    return matchesQuery && matchesCity && matchesStatus;
+    const matchesFilter = !tag || r.tags.includes(tag);
+    return matchesCategory && matchesQuery && matchesCity && matchesFilter;
   });
 }
