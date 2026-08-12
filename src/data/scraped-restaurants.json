@@ -1,0 +1,595 @@
+[
+  {
+    "sourceSlug": "hyderabad-house-fort-worth",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/hyderabad-house-fort-worth",
+    "name": "Hyderabad House",
+    "description": null,
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFtxUXpKQIzFLEAl7Go4RZVLcDt6AY8mtrOlN9Iy-B8W2Ogfd-iRhHOtea1KAjgiKpHcvuiR4bXU2HrXKsUEFmzHts6DLsQ-47QBv35Aba51XBVBhpljtWojmMjHBIp4whad7Ja8kVokFi-=w800-h500-k-no",
+    "phone": "+1 682-900-3341",
+    "website": "http://hhfortworth.com/",
+    "cuisine": "Indian",
+    "cuisineTags": [
+      {
+        "slug": "hyderabadi",
+        "label": "Hyderabadi"
+      }
+    ],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "1901 Heritage Trace Pkwy Suite#101, Fort Worth, TX 76177",
+    "city": "Fort Worth",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.9149886,
+    "lng": -97.3337774,
+    "rating": 4.4,
+    "reviewCount": 568,
+    "hours": {
+      "Monday": "11AM-10:30PM",
+      "Tuesday": "11AM-10:30PM",
+      "Wednesday": "11AM-10:30PM",
+      "Thursday": "11AM-10:30PM",
+      "Friday": "11AM-11PM",
+      "Saturday": "9AM-11PM",
+      "Sunday": "9AM-10:30PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.9149886%2C-97.3337774",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.9149886,-97.3337774"
+  },
+  {
+    "sourceSlug": "curry-cowboys-fort-worth",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/curry-cowboys-fort-worth",
+    "name": "Curry Cowboys",
+    "description": null,
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGGjYCsrrcFzPrbuTvIuBxOX6HyhUKvrRLxOSJH4IdtDXM-EqBnu8pn85aiaYM5V_XBSe_kL1G48uUc9gEpsYF9ZOGDzEt6uhTAQWrPurmM_pyJkmiSHT2lr2LovUUugSAHsfWhmUNzbIOk=w800-h500-k-no",
+    "phone": "+1 682-250-3231",
+    "website": "https://currycowboys.com/",
+    "cuisine": "Indian",
+    "cuisineTags": [
+      {
+        "slug": "north-indian",
+        "label": "North Indian"
+      }
+    ],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "2740 Western Center Blvd #516, Fort Worth, TX 76131",
+    "city": "Fort Worth",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.8606166,
+    "lng": -97.3199477,
+    "rating": 4.7,
+    "reviewCount": 139,
+    "hours": {
+      "Monday": "11AM-11:30PM",
+      "Tuesday": "11AM-11:30PM",
+      "Wednesday": "11AM-11:30PM",
+      "Thursday": "11AM-11:30PM",
+      "Friday": "11AM-11:30PM",
+      "Saturday": "11AM-11:30PM",
+      "Sunday": "11AM-11:30PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.8606166%2C-97.3199477",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.8606166,-97.3199477"
+  },
+  {
+    "sourceSlug": "tikka-bites-indian-cuisine-fort-worth",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/tikka-bites-indian-cuisine-fort-worth",
+    "name": "Tikka Bites Indian Cuisine",
+    "description": null,
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHxYzPkNwpHPmPGc2rK1Nc9YtEEMhN0q_wX-N-BSLf7500xNLK5tjjRWMZGD3ohLsnvS5scPgQlMZP_rjaAzuPDp9_M2UWUWtjRXBy_tCW1BF6X34yPqS0FpZd9pqBrYCM7-j5yzPZA2c8=w800-h500-k-no",
+    "phone": "+1 682-224-0959",
+    "website": "http://www.tikkabites.us/",
+    "cuisine": "Indian",
+    "cuisineTags": [],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "8545 Boat Club Rd #103, Fort Worth, TX 76179",
+    "city": "Fort Worth",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.8792744,
+    "lng": -97.4263479,
+    "rating": 4.7,
+    "reviewCount": 166,
+    "hours": {
+      "Monday": "Closed",
+      "Tuesday": "11AM-2:30PM, 4-9PM",
+      "Wednesday": "11AM-2:30PM, 4-9PM",
+      "Thursday": "11AM-2:30PM, 4-9PM",
+      "Friday": "11AM-2:30PM, 4-9PM",
+      "Saturday": "11AM-2:30PM, 4-9PM",
+      "Sunday": "11AM-2:30PM, 4-9PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.8792744%2C-97.4263479",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.8792744,-97.4263479"
+  },
+  {
+    "sourceSlug": "texas-indian-cuisine-fort-worth",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/texas-indian-cuisine-fort-worth",
+    "name": "Texas Indian Cuisine",
+    "description": null,
+    "image": "https://lh3.googleusercontent.com/gps-proxy/ALd4DhHxh7NaaEdKbyH3SCKfdlBeqiGE1cpW6CE7hzI9IXRpFc4PBxGH2RPB5gTpNsY8MTFvRPKDQW5m4sxLoKXcOk3DVozYmaxqy7Q7doBtwzYEQdKfssh74UxtItr87i2ziLtuLifFcS9BI2QRsY-DMGHGnsc61N4lotZrCannjzY140Bq2ITOVwKWQw=w800-h500-k-no",
+    "phone": "+1 682-385-9106",
+    "website": "http://texasindiancuisine.com/",
+    "cuisine": "Indian",
+    "cuisineTags": [],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "5054 Trail Lake Dr #108, Fort Worth, TX 76133",
+    "city": "Fort Worth",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.6700509,
+    "lng": -97.3767957,
+    "rating": 4.4,
+    "reviewCount": 306,
+    "hours": {
+      "Monday": "11AM-9PM",
+      "Tuesday": "11AM-9PM",
+      "Wednesday": "11AM-9PM",
+      "Thursday": "11AM-9PM",
+      "Friday": "11AM-9PM",
+      "Saturday": "11AM-9PM",
+      "Sunday": "11AM-9PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.6700509%2C-97.3767957",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.6700509,-97.3767957"
+  },
+  {
+    "sourceSlug": "swad-indian-and-nepalese-cuisine-fort-worth-fort-worth",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/swad-indian-and-nepalese-cuisine-fort-worth-fort-worth",
+    "name": "Swad Indian and Nepalese Cuisine Fort Worth",
+    "description": "Indian & Nepalese dishes, plus vegan choices, in a strip-mall space with takeout.",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGMNr2sL35RF3SnREo-YgZ4VoBG1XrsEB5kB8TQ164dboWFTeDjGPELJErJ7cELB7kujAcwhhc_uezuZFc2rjVS4GlFX3nyZYTh4-e7qugGacyAEMfCUWN9PLTV69Dz28kmkaBx=w800-h500-k-no",
+    "phone": "+1 817-406-5360",
+    "website": "https://swadindianfw.site/",
+    "cuisine": "Indian",
+    "cuisineTags": [],
+    "dietary": [
+      "vegetarian",
+      "vegan"
+    ],
+    "address": "8333 Sohi Dr #100, Fort Worth, TX 76137",
+    "city": "Fort Worth",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.8935683,
+    "lng": -97.2715016,
+    "rating": 4.1,
+    "reviewCount": 743,
+    "hours": {
+      "Monday": "3-9:30PM",
+      "Tuesday": "3-9:30PM",
+      "Wednesday": "3-9:30PM",
+      "Thursday": "3-9:30PM",
+      "Friday": "3-9:30PM",
+      "Saturday": "11AM-9:30PM",
+      "Sunday": "11AM-9:30PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.8935683%2C-97.2715016",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.8935683,-97.2715016"
+  },
+  {
+    "sourceSlug": "namaste-grill-bar-fort-worth-fort-worth",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/namaste-grill-bar-fort-worth-fort-worth",
+    "name": "Namaste Grill & Bar Fort Worth",
+    "description": null,
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGENS2bQHiQ5TkEQcfZGXfoBmmozPWD0dOgHrO3W1hV5bCY52XsMIle0w7WnqtLbSEeWHvGCrAF6PRJc71PjngJuoLlLcT7Sh9yRxkTk8Cg1HvLUcm16t8Ta8NJfsMAtGlOQKg8=w800-h500-k-no",
+    "phone": "+1 682-385-9091",
+    "website": "http://fortworth.namastegrillandbar.com/",
+    "cuisine": "Indian",
+    "cuisineTags": [],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "7355 N Beach St, Fort Worth, TX 76137",
+    "city": "Fort Worth",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.8725528,
+    "lng": -97.2917878,
+    "rating": 4.8,
+    "reviewCount": 3216,
+    "hours": {
+      "Monday": "11AM-11PM",
+      "Tuesday": "11AM-11PM",
+      "Wednesday": "11AM-11PM",
+      "Thursday": "11AM-11PM",
+      "Friday": "11AM-12AM",
+      "Saturday": "11AM-12AM",
+      "Sunday": "11AM-11PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.8725528%2C-97.2917878",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.8725528,-97.2917878"
+  },
+  {
+    "sourceSlug": "annampuram-authentic-south-indian-restaurant-arlington",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/annampuram-authentic-south-indian-restaurant-arlington",
+    "name": "Annampuram Authentic South Indian Restaurant",
+    "description": null,
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGJzcdGOsKT9W5LeRRVoMR4E7QpSy3AoS97nzwm9Go66B-XxaPr4fNutT4_9MI0qAUAe12S1dwTinXkE18YYxwKsT3Pw4CyA7j8CShvgEHUn5gSLvHzP1AiFN5u83X0wbg94exJ=w800-h500-k-no",
+    "phone": "+1 682-238-4123",
+    "website": "https://annampuram.com/",
+    "cuisine": "Indian",
+    "cuisineTags": [
+      {
+        "slug": "south-indian",
+        "label": "South Indian"
+      }
+    ],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "1201 S Cooper St, Arlington, TX 76010",
+    "city": "Arlington",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.724898,
+    "lng": -97.11416419999999,
+    "rating": 4.7,
+    "reviewCount": 1458,
+    "hours": {
+      "Monday": "9:30AM-2AM",
+      "Tuesday": "9:30AM-2AM",
+      "Wednesday": "9AM-2AM",
+      "Thursday": "9:30AM-2AM",
+      "Friday": "9:30AM-2AM",
+      "Saturday": "9:30AM-2AM",
+      "Sunday": "9:30AM-10PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.724898%2C-97.11416419999999",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.724898,-97.11416419999999"
+  },
+  {
+    "sourceSlug": "tandoor-indian-restaurant-arlington",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/tandoor-indian-restaurant-arlington",
+    "name": "Tandoor Indian Restaurant",
+    "description": "Mughlai cuisine, with a tandoori emphasis, is served in a softly lit, white-tablecloth setting.",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHlVd5a1exFqWSFTtc1K3Xp-ANt2NsC6GWjn2jQEEn5u6yonl6j2u8vmKUpUN40R8uNhgL_q1JEkGNrFQbk0oQT2RPF89egWYtY9mvILpKsZqC-rlOnOq9Uj5iE2uMnELt0Ckok=w800-h500-k-no",
+    "phone": "+1 817-221-8419",
+    "website": "https://tandoorarlington.com/",
+    "cuisine": "Indian",
+    "cuisineTags": [
+      {
+        "slug": "mughlai",
+        "label": "Mughlai"
+      },
+      {
+        "slug": "north-indian",
+        "label": "North Indian"
+      }
+    ],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "1200 N Fielder Rd Suite 532, Arlington, TX 76012",
+    "city": "Arlington",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.7523164,
+    "lng": -97.1335658,
+    "rating": 4.4,
+    "reviewCount": 1101,
+    "hours": {
+      "Monday": "11:30AM-2:30PM, 5:30-9:30PM",
+      "Tuesday": "Closed",
+      "Wednesday": "11:30AM-2:30PM, 5:30-9:30PM",
+      "Thursday": "11:30AM-2:30PM, 5:30-9:30PM",
+      "Friday": "11:30AM-2:30PM, 5:30-9:45PM",
+      "Saturday": "11:30AM-2:30PM, 5:30-9:45PM",
+      "Sunday": "11:30AM-2:30PM, 5:30-9:30PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.7523164%2C-97.1335658",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.7523164,-97.1335658"
+  },
+  {
+    "sourceSlug": "saffron-kitchen-and-bar-arlington",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/saffron-kitchen-and-bar-arlington",
+    "name": "Saffron Kitchen and Bar",
+    "description": null,
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE-mOEO9ylA8_JJKG-lAY23nD0bdRjd2jXiRvszDvDri1kozobOY7zqiQnAYkMKXwinSv9gxVr5twXjqaRlwvql3Kqsy7S8r6jPv7Sh_6hWmLC2justXfYGZFLe9C12vKboF3_tGAHTx6FC=w800-h500-k-no",
+    "phone": "+1 817-406-1163",
+    "website": "https://saffronkitchenandbar.com/",
+    "cuisine": "Indian",
+    "cuisineTags": [],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "5005 S Cooper St #163, Arlington, TX 76017",
+    "city": "Arlington",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.6641734,
+    "lng": -97.13345389999999,
+    "rating": 4.9,
+    "reviewCount": 584,
+    "hours": {
+      "Monday": "11:45AM-10PM",
+      "Tuesday": "11:45AM-10PM",
+      "Wednesday": "11:45AM-10PM",
+      "Thursday": "11:45AM-10PM",
+      "Friday": "11:45AM-11PM",
+      "Saturday": "11:45AM-11PM",
+      "Sunday": "11:45AM-10PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.6641734%2C-97.13345389999999",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.6641734,-97.13345389999999"
+  },
+  {
+    "sourceSlug": "spices-of-india-kitchen-restaurant-catering-irving",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/spices-of-india-kitchen-restaurant-catering-irving",
+    "name": "Spices Of India Kitchen - Restaurant & Catering",
+    "description": "Modest restaurant doling out traditional Indian eats such as biriyani & curry with housemade naan.",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH8p3l2QZ8G_MhwubYT0t0zqPzHBHx-6zqbT7QJozJl7xSPrntMzre4vzCwtVDQLA5XMWmtZ389YUiIbGHSv3uS1cOyz-3Kj26hqm4K95m73I1nDxHXaFSv2ivqbLaKdaNM8j_E=w800-h500-k-no",
+    "phone": "+1 214-751-6468",
+    "website": "https://spiceofindiakitchentx.com/",
+    "cuisine": "Indian",
+    "cuisineTags": [
+      {
+        "slug": "north-indian",
+        "label": "North Indian"
+      }
+    ],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "833 E Shady Grove Rd A, Irving, TX 75060",
+    "city": "Irving",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.8013084,
+    "lng": -96.93636599999999,
+    "rating": 4.5,
+    "reviewCount": 970,
+    "hours": {
+      "Monday": "11AM-8PM",
+      "Tuesday": "Closed",
+      "Wednesday": "11AM-8PM",
+      "Thursday": "11AM-8PM",
+      "Friday": "11AM-8:30PM",
+      "Saturday": "11AM-8:30PM",
+      "Sunday": "11AM-6PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.8013084%2C-96.93636599999999",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.8013084,-96.93636599999999"
+  },
+  {
+    "sourceSlug": "simply-south-indian-vegetarian-restaurant-irving",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/simply-south-indian-vegetarian-restaurant-irving",
+    "name": "Simply South - Indian Vegetarian Restaurant",
+    "description": null,
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGG2nvT5UUaCohHFJV3nm60HJo1H9cNIN6GSL8Tj7KdX_OezS8zKXq6ZfVZGrMM2TnuZ--AZP7dJm-PfWIU0VZGzTi1VjdDxZs7nBn_7eZEYZshyarag3ALFMmMRg5VE0aX5XBGPQ=w800-h500-k-no",
+    "phone": "+1 972-787-6884",
+    "website": "http://www.simplysouth.us/",
+    "cuisine": "Indian",
+    "cuisineTags": [
+      {
+        "slug": "south-indian",
+        "label": "South Indian"
+      }
+    ],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "1001 MacArthur Park Dr, Irving, TX 75063",
+    "city": "Irving",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.9148172,
+    "lng": -96.9626457,
+    "rating": 4.3,
+    "reviewCount": 4360,
+    "hours": {
+      "Monday": "10:30AM-3:30PM, 5:30-10PM",
+      "Tuesday": "10:30AM-3PM, 5:30-10PM",
+      "Wednesday": "10:30AM-3PM, 5:30-10PM",
+      "Thursday": "10:30AM-3PM, 5:30-10PM",
+      "Friday": "8AM-4PM, 5-10:30PM",
+      "Saturday": "8AM-4PM, 5-10:30PM",
+      "Sunday": "8AM-4PM, 5-10PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.9148172%2C-96.9626457",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.9148172,-96.9626457"
+  },
+  {
+    "sourceSlug": "urban-tadka-irving",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/urban-tadka-irving",
+    "name": "Urban Tadka",
+    "description": "This Indian option offers a largely Punjabi menu including chicken, lamb, goat & vegetarian choices.",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFrGdM7XaQb1hvZOCgLUKTxjaW_KZWJdtzs0LoWiwHkWhASf2VV9ivoUtBNzP4fTNQGWOgh9vhzQo6wJTV_Muy7Wspar9xyvUst3l-qRjfGlyl_cJItID-bpgGYacvwC_XNbCM=w800-h500-k-no",
+    "phone": "+1 469-420-9920",
+    "website": "http://www.urbantadkadallas.com/",
+    "cuisine": "Indian",
+    "cuisineTags": [
+      {
+        "slug": "punjabi",
+        "label": "Punjabi"
+      }
+    ],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "1800 Market Pl Blvd #190, Irving, TX 75063",
+    "city": "Irving",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.9201957,
+    "lng": -96.97191269999999,
+    "rating": 4.1,
+    "reviewCount": 1609,
+    "hours": {
+      "Monday": "11AM-2PM, 5:30-9:30PM",
+      "Tuesday": "Closed",
+      "Wednesday": "11AM-2PM, 5:30-9:30PM",
+      "Thursday": "11AM-2PM, 5:30-9:30PM",
+      "Friday": "11AM-2PM, 5:30-9:30PM",
+      "Saturday": "11AM-2:30PM, 5:30-9:30PM",
+      "Sunday": "11AM-2PM, 5:30-9:30PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.9201957%2C-96.97191269999999",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.9201957,-96.97191269999999"
+  },
+  {
+    "sourceSlug": "bawarchi-indian-cuisine-irvingtx-irving",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/bawarchi-indian-cuisine-irvingtx-irving",
+    "name": "Bawarchi Indian Cuisine - Irving,TX",
+    "description": "Indian chain restaurant offering traditional dishes such as grilled chicken, kebabs & more.",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEZiN_9WfrsvJCWfTqfPEJw_v8WsUlvESiYetEuEwCzgn27AlHafcorT1l6cXpJf3U9nH3pxQYgEgxJTeM1jRM_9sJ0Z91DmMyaGRleVKN8DWJASVL3_k026HUGgGMETj0WjlFs=w800-h500-k-no",
+    "phone": "+1 972-444-0000",
+    "website": "https://www.bawarchiirving.com/",
+    "cuisine": "Indian",
+    "cuisineTags": [],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "7750 N MacArthur Blvd Suite 195, Irving, TX 75063",
+    "city": "Irving",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.9128142,
+    "lng": -96.9559269,
+    "rating": 4.1,
+    "reviewCount": 4116,
+    "hours": {
+      "Monday": "10:30AM-12AM",
+      "Tuesday": "10:30AM-12AM",
+      "Wednesday": "10:30AM-12AM",
+      "Thursday": "10:30AM-12AM",
+      "Friday": "10:30AM-12:30AM",
+      "Saturday": "10:30AM-12:30AM",
+      "Sunday": "10:30AM-12AM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.9128142%2C-96.9559269",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.9128142,-96.9559269"
+  },
+  {
+    "sourceSlug": "india-palace-dallas",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/india-palace-dallas",
+    "name": "India Palace",
+    "description": "Indian cuisine, including vegetarian & gluten-free options, in a white-tablecloth setting.",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEbI6y6DVexeb6whhGC46pmmoYMIM8wp097htquAdE_Th5h7wPjY8opiPLp3F0YU81MsqSEMaMQJPRc6HC56153WRIf3J_6ZBwLqwHfpnb7hQtWfVZcpgRhIM-ZO9TgAsdtS0RdoA=w800-h500-k-no",
+    "phone": "+1 972-392-0190",
+    "website": "https://www.indiapalacedallas.com/",
+    "cuisine": "Indian",
+    "cuisineTags": [],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "12817 Preston Rd Suite # 105, Dallas, TX 75230",
+    "city": "Dallas",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.9232686,
+    "lng": -96.80441379999999,
+    "rating": 4.2,
+    "reviewCount": 1813,
+    "hours": {
+      "Monday": "11AM-9:30PM",
+      "Tuesday": "11AM-9:30PM",
+      "Wednesday": "11AM-9:30PM",
+      "Thursday": "11AM-9:30PM",
+      "Friday": "11AM-10PM",
+      "Saturday": "11AM-10PM",
+      "Sunday": "11AM-9:30PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.9232686%2C-96.80441379999999",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.9232686,-96.80441379999999"
+  },
+  {
+    "sourceSlug": "hyderabadi-biryani-bbq-dallas",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/hyderabadi-biryani-bbq-dallas",
+    "name": "Hyderabadi Biryani & BBQ",
+    "description": "Indian & Pakistani cuisine including biriyani, masala & tandoori mains in an unassuming venue.",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEfw8LADW6xDcWvqCBW1TcIG-XnPn3iRDVAgS6ddRkV2e74t_npChDi8NOxLyYCL8q6rrJws9XcW9XFF4Juc8PMg0Cs_s9oazJFb_mDM2Ha8eGdWcIiLHf51_Mr5AJ4F_z9xKGx=w800-h500-k-no",
+    "phone": "+1 469-921-4331",
+    "website": "https://hyderabadibiryanibarbeque.com/",
+    "cuisine": "Indian",
+    "cuisineTags": [
+      {
+        "slug": "hyderabadi",
+        "label": "Hyderabadi"
+      },
+      {
+        "slug": "north-indian",
+        "label": "North Indian"
+      }
+    ],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "6855 Greenville Ave, Dallas, TX 75231",
+    "city": "Dallas",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 32.8706702,
+    "lng": -96.7660629,
+    "rating": 4.5,
+    "reviewCount": 1014,
+    "hours": {
+      "Monday": "11:30AM-10PM",
+      "Tuesday": "5-10PM",
+      "Wednesday": "11:30AM-10PM",
+      "Thursday": "11:30AM-10PM",
+      "Friday": "11:30AM-11PM",
+      "Saturday": "11:30AM-11PM",
+      "Sunday": "11:30AM-10PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=32.8706702%2C-96.7660629",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=32.8706702,-96.7660629"
+  },
+  {
+    "sourceSlug": "kuppanna-plano",
+    "sourceUrl": "https://www.indianrestaurentsinusa.com/restaurants/kuppanna-plano",
+    "name": "Kuppanna",
+    "description": null,
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHWwUDCSpvlI1xjYdb9ecx2LDG0kFDd1i3WhtGBBloKtONLX95ccXfaTwvu6mOsa8i_hNgDkQrXzfaGH97m957nz74sSPjKgMFvmLXKejD7rUuTt2YUaeAPe4sCRXWtpTcT1H1KyNyT6EL6=w800-h500-k-no",
+    "phone": "+1 469-409-3123",
+    "website": "https://kuppannaus.com/kuppannaplano%3Futm_source%3Dgoogle",
+    "cuisine": "Indian",
+    "cuisineTags": [],
+    "dietary": [
+      "vegetarian"
+    ],
+    "address": "1301 Custer Rd #510a, Plano, TX 75075",
+    "city": "Plano",
+    "region": "Texas",
+    "postalCode": null,
+    "country": "US",
+    "lat": 33.0172432,
+    "lng": -96.7341555,
+    "rating": 4.7,
+    "reviewCount": 6134,
+    "hours": {
+      "Monday": "11:30AM-3PM, 6-10PM",
+      "Tuesday": "11:30AM-3PM, 6-10PM",
+      "Wednesday": "11:30AM-3PM, 6-10PM",
+      "Thursday": "11:30AM-3PM, 6-10PM",
+      "Friday": "11:30AM-12AM",
+      "Saturday": "12PM-12AM",
+      "Sunday": "12-9:15PM"
+    },
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.0172432%2C-96.7341555",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=33.0172432,-96.7341555"
+  }
+]
